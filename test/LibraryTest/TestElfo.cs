@@ -58,7 +58,7 @@ namespace Test.Library;
             Assert.AreEqual(daga, tom.ArmaEquipada);
 
         }
-
+        [Test]
         public void DesequiparArma()
         {
             // Configuración.
@@ -69,8 +69,7 @@ namespace Test.Library;
             // Comportamiento.
             tom.DesequiparArma();
             // Comprobación.
-            Assert.AreEqual(daga, tom.ArmaEquipada);
-            // ?????????????
+            Assert.IsFalse(tom.ArmaEquipada == daga);
         }
 
         [Test]
@@ -177,7 +176,8 @@ namespace Test.Library;
             // Comportamiento.
             tom.Atacar(john);
             // Comprobación.
-            Assert.AreEqual(-10, john.Vida);
+            //Assert.AreEqual(-10, john.Vida);
+            Assert.AreEqual(0, john.Vida);
 
         }
     }

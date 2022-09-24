@@ -41,7 +41,6 @@ public class Elfo : IPersonaje
     public bool NoTieneLetrasNumeros(string texto)
     {
         List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
-
         List<char> numeros = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //Terminar de escribir las letras
         List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
         List<char> algunosSimbolos = new List<char>() { ' ', '-' };
@@ -65,9 +64,21 @@ public class Elfo : IPersonaje
     }
     public void Atacar(IPersonaje personaje)
     {
-        if (this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
+        /* if (this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
         {
             personaje.Vida = personaje.Vida - (this.ObtenerAtaqueTotal() - personaje.ObtenerDefensaTotal());
+        } */
+        if(this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
+        {
+            int dañoTotal = (this.ObtenerAtaqueTotal() -personaje.ObtenerDefensaTotal());
+            if(dañoTotal > personaje.Vida)
+            {
+                personaje.Vida = 0;
+            }
+            else
+            {
+                personaje.Vida -=dañoTotal;
+            }
         }
     }
 

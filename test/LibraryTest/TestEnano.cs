@@ -67,17 +67,18 @@ namespace Test.Library;
             Assert.AreEqual(maso, golf.ArmaEquipada);
 
         }
-
+        [Test]
         public void DesequiparArma()
         {
             // Configuración.
             Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 40, 0);
             Enano golf = new Enano("Golf");
             golf.Inventario.AgregarArma(maso);
-            // Comportamiento.
             golf.EquiparArma(maso);
+            // Comportamiento.
+            golf.DesequiparArma();
             // Comprobación.
-            Assert.AreEqual(maso, golf.ArmaEquipada);
+            Assert.IsFalse(golf.ArmaEquipada == maso);
 
         }
 

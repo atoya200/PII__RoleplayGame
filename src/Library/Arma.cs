@@ -13,7 +13,7 @@ namespace Library
         {
             if (TextoValido(nombre))
             {
-                this.Name = nombre;
+                this.Name = nombre.Trim();
             }
             else
             {
@@ -21,7 +21,7 @@ namespace Library
             }
             if (TextoValido(descripcion))
             {
-                this.Descripcion = descripcion;
+                this.Descripcion = descripcion.Trim();
             }
             else
             {

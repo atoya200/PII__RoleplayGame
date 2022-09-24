@@ -12,7 +12,7 @@ public class TestHechizo
     {
     }
 
-    [Test]
+    /* [Test]
     public void TestConstuctor()
     {
         string expectedName = "Super fuerza";
@@ -24,7 +24,7 @@ public class TestHechizo
         Assert.AreEqual(expectedType,testHechizo.Tipo);
         Assert.AreEqual(expectedAttack,testHechizo.Ataque);
         Assert.AreEqual(expectedDeffense,testHechizo.Defensa);
-    }
+    } */
     [Test]
     public void TestWithWrongName()
     {

@@ -8,19 +8,40 @@ namespace Library
         public string Descripcion { get; private set; }
         public int Ataque { get; private set; }
         public int Defensa { get; private set; }
-        public Ropa(string nombre, string Descripcion, int Ataque, int Defensa)
+        public Ropa(string nombre, string descripcion, int ataque, int defensa)
         {
             if (TextoValido(nombre))
             {
-                this.Name = nombre;
+                this.Name = nombre.Trim();
             }
             else
             {
                 this.Name = null;
             }
-            this.Descripcion = Descripcion;
-            this.Ataque = Ataque;
-            this.Defensa = Defensa;
+            if (TextoValido(descripcion))
+            {
+                this.Descripcion = descripcion.Trim();
+            }
+            else
+            {
+                this.Descripcion = null;
+            }
+            if (ValoresDefensaAtaqueValidos(ataque))
+            {
+                this.Ataque = ataque;
+            }
+            else
+            {
+                this.Ataque = 0;
+            }
+            if (ValoresDefensaAtaqueValidos(defensa))
+            {
+                this.Defensa = defensa;
+            }
+            else
+            {
+                this.Defensa = 0;
+            }
         }
         public bool TextoValido(string nombre)
         {
@@ -53,9 +74,21 @@ namespace Library
                 {
                     return true;
                 }
-                
+
             }
             return formatoIncorrecto;
+        }
+
+           public bool ValoresDefensaAtaqueValidos(int valor)
+        {
+            if (valor < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
     }
