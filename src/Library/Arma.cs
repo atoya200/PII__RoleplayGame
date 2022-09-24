@@ -53,27 +53,30 @@ namespace Library
             return true;
         }
 
-        public bool NoTieneLetrasNumeros(string nombre)
+        public bool NoTieneLetrasNumeros(string texto)
         {
-            List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
+            List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
+
             List<char> numeros = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //Terminar de escribir las letras
-            List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z' }; ;
+            List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            List<char> algunosSimbolos = new List<char>() { ' ', '-' };
+            // Le quitamos los posibles espacios que pueda llegar a tener adelante y atrás
+            texto = texto.Trim();
 
             // Una var para ir revisando que todos los caracteres esten correctos
-        bool formatoIncorrecto = false;
-        foreach (char c in nombre)
-        {
-             if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c))
+            bool formatoIncorrecto = true;
+            foreach (char c in texto)
             {
-                formatoIncorrecto = (formatoIncorrecto && false);
+                if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c) || algunosSimbolos.Contains(c))
+                {
+                    formatoIncorrecto = false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
-        }
-
-        return formatoIncorrecto;
+            return formatoIncorrecto;
         }
 
         public bool ValoresDefensaAtaqueValidos(int valor)

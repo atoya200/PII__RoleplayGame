@@ -13,7 +13,7 @@ public class Mago : IPersonaje
     public int Vida { get { return vida; } set { this.vida = value; } }
 
     // Si se quiere usar hechizos que aumenten la defensa tendría que haber un valor de defensa nato que luego pueda aumentarse
-    public int Defensa {get; private set;}
+    public int Defensa { get; private set; }
     public Inventario Inventario { get; }
 
     public LibroHechizos LibroDeHechizos { get; private set; }
@@ -46,25 +46,29 @@ public class Mago : IPersonaje
         return true;
     }
 
-    public bool NoTieneLetrasNumeros(string nombre)
+    public bool NoTieneLetrasNumeros(string texto)
     {
-        List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
+        List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
+
         List<char> numeros = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //Terminar de escribir las letras
-        List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z' }; ;
+        List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        List<char> algunosSimbolos = new List<char>() { ' ', '-' };
+        // Le quitamos los posibles espacios que pueda llegar a tener adelante y atrás
+        texto = texto.Trim();
+
         // Una var para ir revisando que todos los caracteres esten correctos
-        bool formatoIncorrecto = false;
-        foreach (char c in nombre)
+        bool formatoIncorrecto = true;
+        foreach (char c in texto)
         {
-            if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c))
+            if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c) || algunosSimbolos.Contains(c))
             {
-                formatoIncorrecto = formatoIncorrecto && true;
+                formatoIncorrecto = false;
             }
             else
             {
-                formatoIncorrecto = formatoIncorrecto && false;
+                return true;
             }
         }
-
         return formatoIncorrecto;
     }
 
@@ -115,26 +119,26 @@ public class Mago : IPersonaje
 
     public void UsarHechizoDefensa(Hechizo hechizo)
     {
-        if(hechizo.Tipo == "Defensa")
+        if (hechizo.Tipo == "Defensa")
         {
-            
+
         }
     }
 
     public void AtacarConHechizo(IPersonaje personaje, Hechizo hechizo)
     {
-        if(hechizo.Tipo == "Ataque")
+        if (hechizo.Tipo == "Ataque")
         {
-        if (hechizo.Ataque >= personaje.ObtenerDefensaTotal())
-        {
-            personaje.Vida = personaje.Vida - (hechizo.Ataque - personaje.ObtenerDefensaTotal());
-        }
+            if (hechizo.Ataque >= personaje.ObtenerDefensaTotal())
+            {
+                personaje.Vida = personaje.Vida - (hechizo.Ataque - personaje.ObtenerDefensaTotal());
+            }
         }
         else
         {
             Console.WriteLine($"Este hechizo es de tipo {hechizo.Tipo}, por lo que no puede usarse para atacar");
         }
-        
+
 
     }
 
@@ -171,7 +175,7 @@ public class Mago : IPersonaje
         {
             defensaTotal += this.ArmaEquipada.Defensa;
         }
-        if(this.LibroDeHechizos != null)
+        if (this.LibroDeHechizos != null)
         {
             defensaTotal += this.LibroDeHechizos.Defensa;
         }
