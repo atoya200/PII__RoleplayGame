@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Test.Library
 {
-    //Falta terminar cada uno de estos casos de prueba
+   
     [TestFixture]
     public class TestArma
     {
