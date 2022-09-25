@@ -19,7 +19,6 @@ namespace Library
         public void EquiparArma(Arma arma);
         public void DesequiparArma();
 
-        //public IInventario Inventario {get;}
 
         public void Atacar(IPersonaje personaje);
         public int ObtenerAtaqueTotal();

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Library;
 
-public interface IEquipamiento: IValidable   // REVISAR NOMENCLATURAS PARA ESTAR TODO IGUAL
+public interface IEquipamiento: IValidable  
 {
     public string Name {get;}
     public string Descripcion { get; }

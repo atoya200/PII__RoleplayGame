@@ -4,11 +4,10 @@ using NUnit.Framework;
 
 namespace Test.Library
 {
-    //Falta terminar cada uno de estos casos de prueba
     [TestFixture]
     public class TestElementoMagico
     {
-        // Conjunto de test sobre el name del arma.
+        // Conjunto de test sobre el name del elemento mágico.
         [Test]
         public void ElementoMagicoNameCorrecto()
         {
@@ -62,7 +61,7 @@ namespace Test.Library
             Assert.AreEqual(nameEsperado, espada.Name);
         }
 
-        // Pruebas de la descripción del arma.
+        // Pruebas de la descripción del elemento mágico.
 
  [Test]
         public void ElementoMagicoDescripcionCorrecta()

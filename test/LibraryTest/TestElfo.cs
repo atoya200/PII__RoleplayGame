@@ -51,7 +51,7 @@ namespace Test.Library;
             // Configuración.
             Arma daga = new Arma("Daga de Miraak", "Esta daga fue usada por el mismisimo Miraak para conquistar Solstheim", 70, 0);
             Elfo tom = new Elfo("Tom");
-            tom.Inventario.AgregarElemento(daga);
+            tom.Inventario.AgregarArma(daga);
             // Comportamiento.
             tom.EquiparArma(daga);
             // Comprobación.
@@ -64,7 +64,7 @@ namespace Test.Library;
             // Configuración.
             Arma daga = new Arma("Daga de Miraak", "Esta daga fue usada por el mismisimo Miraak para conquistar Solstheim", 70, 0);
             Elfo tom = new Elfo("Tom");
-            tom.Inventario.AgregarElemento(daga);
+            tom.Inventario.AgregarArma(daga);
             tom.EquiparArma(daga);
             // Comportamiento.
             tom.DesequiparArma();
@@ -79,7 +79,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Ropa armadura1 = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Elfo tom = new Elfo("Tom");
-            tom.Inventario.AgregarElemento(armadura);
+            tom.Inventario.AgregarRopa(armadura);
             // Comportamiento.
             tom.EquiparRopa(armadura);
             // Comprobación.
@@ -93,7 +93,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Ropa armadura1 = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Elfo tom = new Elfo("Tom");
-            tom.Inventario.AgregarElemento(armadura);
+            tom.Inventario.AgregarRopa(armadura);
             tom.EquiparRopa(armadura);
             // Comportamiento.
             tom.QuitarRopa(armadura);
@@ -110,8 +110,8 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Elfo tom = new Elfo("Tom");
             Elfo john = new Elfo("John");
-            john.Inventario.AgregarElemento(armadura);
-            tom.Inventario.AgregarElemento(daga);
+            john.Inventario.AgregarRopa(armadura);
+            tom.Inventario.AgregarArma(daga);
             tom.EquiparArma(daga);
             john.EquiparRopa(armadura);
             // Comportamiento.
@@ -128,7 +128,7 @@ namespace Test.Library;
             Arma daga = new Arma("Daga de Miraak", "Esta daga fue usada por el mismisimo Miraak para conquistar Solstheim", 70, 0);
             Elfo tom = new Elfo("Tom");
             Elfo john = new Elfo("John");
-            tom.Inventario.AgregarElemento(daga);
+            tom.Inventario.AgregarArma(daga);
             tom.EquiparArma(daga);
             // Comportamiento.
             tom.Atacar(john);
@@ -156,7 +156,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Gabardina del Silver Shroud", "La gabardina que usaba el personaje de los comics", 0, 30);
             Elfo tom = new Elfo("Tom");
             Elfo john = new Elfo("John");
-            john.Inventario.AgregarElemento(armadura);
+            john.Inventario.AgregarRopa(armadura);
             john.EquiparRopa(armadura);
             // Comportamiento.
             tom.Atacar(john);
@@ -171,7 +171,7 @@ namespace Test.Library;
             Elfo tom = new Elfo("Tom");
             Elfo john = new Elfo("John");
             Arma daga = new Arma("Daga de Miraak", "Esta daga fue usada por el mismisimo Miraak para conquistar Solstheim", 100, 0);
-            tom.Inventario.AgregarElemento(daga);
+            tom.Inventario.AgregarArma(daga);
             tom.EquiparArma(daga);
             // Comportamiento.
             tom.Atacar(john);

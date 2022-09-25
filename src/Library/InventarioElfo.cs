@@ -3,52 +3,59 @@ using System;
 
 namespace Library;
 
-    public class InventarioElfo: IInventario
+public class InventarioElfo : IInventario
+{
+
+
+    public List<Arma> Armas { get; } 
+    public List<Ropa> Ropas { get; private set; } 
+
+    public InventarioElfo()
     {
-        
-        public List<IEquipamiento> Elementos {get;private set;}
-        
-        public InventarioElfo()
-        {
-            Elementos = new List<IEquipamiento>();
-        }
-        public void AgregarElemento(IEquipamiento item)
-        {
-            this.Elementos.Add(item);
-        }
-        public void QuitarElemento(IEquipamiento item)
-        {
-            this.Elementos.Remove(item);
-        }
-        
-          public void MostrarContenido()
-        {
-            this.ImprimirArmas();
-            this.ImprmirRopa();
-        } 
+        Ropas = new List<Ropa>();
+        Armas = new List<Arma>();
+    }
+    public void AgregarRopa(Ropa prenda)
+    {
+        this.Ropas.Add(prenda);
+    }
+    public void QuitarRopa(Ropa prenda)
+    {
+        this.Ropas.Remove(prenda);
+    }
 
-        public void ImprimirArmas()
-        {
-            Console.WriteLine("Armas");
-            foreach(IEquipamiento item in this.Elementos)
-            {
-                if(item.Ataque !=0)
-                {
-                    Console.WriteLine($"{item.Name}");
-                }
-            }
-        }
-
-             public void ImprmirRopa()
-        {
-            Console.WriteLine("Ropaje");
-            foreach(IEquipamiento item in this.Elementos)
-            {
-                if(item.Ataque == 0)
-                {
-                    Console.WriteLine($"{item.Name}");
-                }
-            }
-        }
+    public void AgregarArma(Arma arma)
+    {
+        this.Armas.Add(arma);
+    }
+    public void QuitarArma(Arma arma)
+    {
+        this.Armas.Remove(arma);
 
     }
+
+    public void MostrarContenido()
+    {
+        this.ImprimirArmas();
+        this.ImprmirRopa();
+    }
+
+    public void ImprimirArmas()
+    {
+        Console.WriteLine("Armas");
+        foreach (Arma item in this.Armas)
+        {
+           Console.WriteLine($"{item.Name}");    
+        }
+    }
+
+    public void ImprmirRopa()
+    {
+        Console.WriteLine("Ropaje");
+        foreach (IEquipamiento item in this.Ropas)
+        {
+                Console.WriteLine($"{item.Name}");
+        }
+    }
+
+}

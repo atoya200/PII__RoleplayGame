@@ -4,7 +4,6 @@ using NUnit.Framework;
 
 namespace Test.Library
 {
-    //Falta terminar cada uno de estos casos de prueba
     [TestFixture]
     public class TestRopa
     {
@@ -62,9 +61,9 @@ namespace Test.Library
             Assert.AreEqual(nameEsperado, armadura.Name);
         }
 
-        // Pruebas de la descripción del Ropa.
+        // Pruebas de la descripción de la Ropa.
 
- [Test]
+        [Test]
         public void RopaDescripcionCorrecta()
         {
             // Configuración.
@@ -135,7 +134,7 @@ namespace Test.Library
             // Configuración.
             int proteccionEsperada = 0;
             // Comportamiento.
-            Ropa armadura = new Ropa("Armadura de Bronce", "Forjada por los enanos hace siglos", 0,-1111);
+            Ropa armadura = new Ropa("Armadura de Bronce", "Forjada por los enanos hace siglos", 0, -1111);
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, armadura.Defensa);
         }

@@ -29,15 +29,14 @@ public class Enano : IPersonaje
             this.Name = null;
         }
         this.Vida = 100;
-        //this.Defensa = 0;
+        this.Defensa = 0;
         RopaEquipada = new List<Ropa>();
         Inventario = new InventarioEnano();
     }
     
     public void EquiparArma(Arma arma)
     {
-        if (Inventario.Elementos.Contains(arma))
-        //if(Inventario.Armas.Contains(arma)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
+        if (Inventario.Armas.Contains(arma))
         {
             this.ArmaEquipada = arma;
         }
@@ -53,8 +52,7 @@ public class Enano : IPersonaje
     }
     public void EquiparRopa(Ropa ropa)
     {
-        if (Inventario.Elementos.Contains(ropa))
-        //if(Inventario.Ropas.Contains(ropa)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
+        if (Inventario.Ropas.Contains(ropa))
         {
             this.RopaEquipada.Add(ropa);
         }
@@ -74,7 +72,7 @@ public class Enano : IPersonaje
 
         if (this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
         {
-            int vidaNueva = this.Vida - (this.ObtenerAtaqueTotal() - personaje.ObtenerDefensaTotal());
+            int vidaNueva = personaje.Vida - (this.ObtenerAtaqueTotal() - personaje.ObtenerDefensaTotal());
             if (ValorMayorIgualCero(vidaNueva))
             {
                 personaje.Vida = vidaNueva;
@@ -100,8 +98,7 @@ public class Enano : IPersonaje
     }
     public int ObtenerDefensaTotal()
     {
-        int defensaTotal = 0;
-        //int defensaTotal = this.Defensa;
+        int defensaTotal = this.Defensa;
         foreach (var item in RopaEquipada)
         {
             defensaTotal += item.Defensa;
@@ -124,20 +121,20 @@ public class Enano : IPersonaje
 
     public bool NoTieneLetrasNumeros(string texto)
     {
-        List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //Terminar de escribir las letras
+        List<char> letras = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; 
 
-        List<char> numeros = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //Terminar de escribir las letras
+        List<char> numeros = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; 
         List<char> letrasMin = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
         List<char> algunosSimbolos = new List<char>() { ' ', '-' };
-        // Le quitamos los posibles espacios que pueda llegar a tener adelante y atrás
+        List<char> conTilde = new List<char>{'á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Ú','Í','Ó'};
+        // Le quitamos los posibles espacios que pueda llegar a tener adelante y atras.
         texto = texto.Trim();
 
-        // Una var para ir revisando que todos los caracteres esten correctos
+        // Una var para ir revisando que todos los caracteres esten correctos.
         bool formatoIncorrecto = true;
         foreach (char c in texto)
         {
-            if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c) || algunosSimbolos.Contains(c))
-            {
+                if (letras.Contains(c) || numeros.Contains(c) || letrasMin.Contains(c) || algunosSimbolos.Contains(c) || conTilde.Contains(c))            {
                 formatoIncorrecto = false;
             }
             else

@@ -15,47 +15,49 @@ public class TestInventarioMago
     public void AgregarArma()
     {
         // Configuración.
-        Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 400, 0);
+        Arma baston = new Arma("Bastón del Rey Mago", "Se cree que es el mismo bastón que uso el Rey Mago hace 200 años", 40, 0);
         InventarioMago bolsa = new InventarioMago();
         // Comportamiento.
-        bolsa.AgregarElemento(maso);
+        bolsa.AgregarArma(baston);
         // Comprobación.
-        Assert.IsTrue(bolsa.Elementos.Contains(maso));
+        Assert.IsTrue(bolsa.Armas.Contains(baston));
     }
 
     [Test]
     public void QuitarArma()
     {
         // Configuración.
-        Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 400, 0);
+        Arma baston = new Arma("Bastón del rey Mago", "Se cree que es el mismo bastón que uso el Rey Mago hace 200 años", 40, 0);
         InventarioMago bolsa = new InventarioMago();
-        bolsa.AgregarElemento(maso);
+        bolsa.AgregarArma(baston);
         // Comportamiento.
-        bolsa.QuitarElemento(maso);
+        bolsa.QuitarArma(baston);
         // Comprobación.
-        Assert.IsFalse(bolsa.Elementos.Contains(maso));
+        Assert.IsFalse(bolsa.Armas.Contains(baston));
     }
     public void AgregarRopaTest()
     {
-        Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
+        Ropa tunica = new Ropa("Tunica del maestro Gangan", "Fue usada por el gran mago Gangan, dicen que con ella te volveras igual de poderoso", 0, 30);
         InventarioMago bolsa = new InventarioMago();
-        bolsa.AgregarElemento(armadura);
-        Assert.IsTrue(bolsa.Elementos.Contains(armadura));
+        bolsa.AgregarRopa(tunica);
+        Assert.IsTrue(bolsa.Ropas.Contains(tunica));
     }
 
     [Test]
     public void QuitarRopaTest()
     {
-        Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
+        Ropa tunica = new Ropa("Tunica del maestro Gangan", "Fue usada por el gran mago Gangan, dicen que con ella te volveras igual de poderoso", 0, 30);
         InventarioMago bolsa = new InventarioMago();
-        bolsa.AgregarElemento(armadura);
-        bolsa.QuitarElemento(armadura);
-        Assert.IsFalse(bolsa.Elementos.Contains(armadura));
+        bolsa.AgregarRopa(tunica);
+        // Comportamiento.
+        bolsa.QuitarRopa(tunica);
+        // Comprobación.
+        Assert.IsFalse(bolsa.Ropas.Contains(tunica));
     }
     [Test]
     public void AgregarElementoMagicoTest()
     {
-        ElementoMagico runa = new ElementoMagico("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
+        ElementoMagico runa = new ElementoMagico("Runa del gran dragón rojo", "Item desprendido del cuerpo del colosal dragón rojo del bosco de Kellv", 30, 0);
         InventarioMago bolsa = new InventarioMago();
         bolsa.AgregarElementoMagico(runa);
         Assert.IsTrue(bolsa.ElementosMagicos.Contains(runa));
@@ -64,7 +66,7 @@ public class TestInventarioMago
     [Test]
     public void QuitarElementoMagicoTest()
     {
-        ElementoMagico runa = new ElementoMagico("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
+        ElementoMagico runa = new ElementoMagico("Runa del gran dragón rojo", "Item desprendido del cuerpo del colosal dragón rojo del bosco de Kellv", 30, 0);
         InventarioMago bolsa = new InventarioMago();
         bolsa.AgregarElementoMagico(runa);
         bolsa.QuitarElementoMagico(runa);
@@ -93,11 +95,11 @@ public class TestInventarioMago
     [Test]
     public void MostrarContenidoTest()
     {
-        Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
-        Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 400, 0);
+        Ropa tunica = new Ropa("Tunica del maestro Gangan", "Fue usada por el gran mago Gangan, dicen que con ella te volveras igual de poderoso", 0, 30);
+        Arma baston = new Arma("Bastón del rey mago", "Se cree que es el mismo bastón que uso el Rey Mago hace 200 años", 40, 0);
         InventarioMago testInventarioMago = new InventarioMago();
-        testInventarioMago.AgregarElemento(armadura);
-        testInventarioMago.AgregarElemento(maso);
+        testInventarioMago.AgregarRopa(tunica);
+        testInventarioMago.AgregarArma(baston);
         testInventarioMago.MostrarContenido();
         Assert.Pass();
     }

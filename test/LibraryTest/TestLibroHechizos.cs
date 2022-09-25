@@ -11,9 +11,7 @@ public class TestLibroHechizos
     {
     }
 
-    // A probar el name.
-  
-
+    // Probando el name.
    [Test]
     public void NameFormatoCorrecto()
     {
@@ -53,7 +51,7 @@ public class TestLibroHechizos
         Assert.AreEqual(nameEsperado, libro1.Name);
     }
 
-// Probar descripcion
+// Probando descripcion.
     [Test]
     public void DescripcionCorrecta()
     {

@@ -6,15 +6,18 @@ namespace Library;
     public interface IInventario
     {
         
-        public List<IEquipamiento> Elementos {get;}
+      public List<Arma> Armas {get;} 
+       public List<Ropa> Ropas  {get;}
         
+        public void AgregarRopa(Ropa prenda);
         
-        public void AgregarElemento(IEquipamiento item);
-      
-        public void QuitarElemento(IEquipamiento item);
+        public void QuitarRopa(Ropa prenda);
         
-        
-         public void MostrarContenido();
+
+        public void AgregarArma(Arma arma);
+       
+        public void QuitarArma(Arma arma);
+       
        
 
     }

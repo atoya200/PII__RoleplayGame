@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Test.Library
 {
-   
+
     [TestFixture]
     public class TestArma
     {
@@ -64,7 +64,7 @@ namespace Test.Library
 
         // Pruebas de la descripción del arma.
 
- [Test]
+        [Test]
         public void ArmaDescripcionCorrecta()
         {
             // Configuración.
@@ -158,12 +158,12 @@ namespace Test.Library
             // Configuración.
             int proteccionEsperada = 0;
             // Comportamiento.
-            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0,-1111);
+            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0, -1111);
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
 
-       
+
 
     }
 }
