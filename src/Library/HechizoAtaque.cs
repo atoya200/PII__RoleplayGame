@@ -1,32 +1,22 @@
-using System.Collections.Generic;
-
-namespace Library
+namespace Library;
+public class HechizoAtaque : IHechizo
 {
-    public class Ropa : IEquipamiento
+    public string Descripcion { get; }
+    public int Ataque { get; }
+    public int Defensa { get; }
+    
+    public HechizoAtaque(string descripcion, int ataque)
     {
-        public string Name { get; private set; }
-        public string Descripcion { get; private set; }
-        public int Ataque { get; private set; }
-        public int Defensa { get; private set; }
-        public Ropa(string name, string descripcion, int ataque, int defensa)
-        {
-            if (TextoValido(name))
+         if (TextoValido(descripcion))
             {
-                this.Name = name.Trim();
-            }
-            else
-            {
-                this.Name = null;
-            }
-            if (TextoValido(descripcion))
-            {
-                this.Descripcion = descripcion.Trim();
+                this.Descripcion = descripcion;
             }
             else
             {
                 this.Descripcion = null;
             }
-            if (ValorMayorIgualCero(ataque))
+            this.Defensa = 0;
+             if (ValorMayorIgualCero(ataque))
             {
                 this.Ataque = ataque;
             }
@@ -34,16 +24,10 @@ namespace Library
             {
                 this.Ataque = 0;
             }
-            if (ValorMayorIgualCero(defensa))
-            {
-                this.Defensa = defensa;
-            }
-            else
-            {
-                this.Defensa = 0;
-            }
-        }
-        public bool TextoValido(string name)
+            
+    }
+
+         public bool TextoValido(string name)
         {
             if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
             {
@@ -74,10 +58,10 @@ namespace Library
                 {
                     return true;
                 }
-
             }
             return formatoIncorrecto;
         }
+
 
            public bool ValorMayorIgualCero(int valor)
         {
@@ -91,5 +75,8 @@ namespace Library
             }
         }
 
-    }
+    
+
+
+
 }

@@ -6,58 +6,58 @@ namespace Test.Library
 {
     //Falta terminar cada uno de estos casos de prueba
     [TestFixture]
-    public class TestArma
+    public class TestElementoMagico
     {
         // Conjunto de test sobre el name del arma.
         [Test]
-        public void ArmaNameCorrecto()
+        public void ElementoMagicoNameCorrecto()
         {
             // Configuración.
             string nameEsperado = "Espada del rey Arturo";
             // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
         [Test]
-        public void ArmaNameVacio()
+        public void ElementoMagicoNameVacio()
         {
             // Configuración.
             string nameEsperado = null;
             // Comportamiento.
-            Arma espada = new Arma("", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
         [Test]
-        public void ArmaNameEspaciosEnBlanco()
+        public void ElementoMagicoNameEspaciosEnBlanco()
         {
             // Configuración.
             string nameEsperado = null;
             // Comportamiento.
-            Arma espada = new Arma("   ", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
-            // Comprobación.
-            Assert.AreEqual(nameEsperado, espada.Name);
-        }
-
-        [Test]
-        public void ArmaNameSoloConSignos()
-        {
-            // Configuración.
-            string nameEsperado = null;
-            // Comportamiento.
-            Arma espada = new Arma("--.-.-=)", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("   ", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
 
         [Test]
-        public void ArmaNameNulo()
+        public void ElementoMagicoNameSoloConSignos()
         {
             // Configuración.
             string nameEsperado = null;
             // Comportamiento.
-            Arma espada = new Arma(null, "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("--.-.-=)", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            // Comprobación.
+            Assert.AreEqual(nameEsperado, espada.Name);
+        }
+
+        [Test]
+        public void ElementoMagicoNameNulo()
+        {
+            // Configuración.
+            string nameEsperado = null;
+            // Comportamiento.
+            ElementoMagico espada = new ElementoMagico(null, "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
@@ -65,54 +65,54 @@ namespace Test.Library
         // Pruebas de la descripción del arma.
 
  [Test]
-        public void ArmaDescripcionCorrecta()
+        public void ElementoMagicoDescripcionCorrecta()
         {
             // Configuración.
             string descripcionEsperada = "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas";
             // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
         [Test]
-        public void ArmaDescripcionVacia()
+        public void ElementoMagicoDescripcionVacia()
         {
             // Configuración.
             string descripcionEsperada = null;
             // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", "", 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", "", 40, 0);
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
         [Test]
-        public void ArmaDescripcionEspaciosEnBlanco()
+        public void ElementoMagicoDescripcionEspaciosEnBlanco()
         {
             // Configuración.
             string descripcionEsperada = null;
             // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", "  ", 40, 0);
-            // Comprobación.
-            Assert.AreEqual(descripcionEsperada, espada.Descripcion);
-        }
-
-        [Test]
-        public void ArmaDescripcionSoloConSignos()
-        {
-            // Configuración.
-            string descripcionEsperada = null;
-            // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", "---=)", 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", "  ", 40, 0);
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
 
         [Test]
-        public void ArmaDescripcionNula()
+        public void ElementoMagicoDescripcionSoloConSignos()
         {
             // Configuración.
             string descripcionEsperada = null;
             // Comportamiento.
-            Arma espada = new Arma("Espada del rey Arturo", null, 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", "---=)", 40, 0);
+            // Comprobación.
+            Assert.AreEqual(descripcionEsperada, espada.Descripcion);
+        }
+
+        [Test]
+        public void ElementoMagicoDescripcionNula()
+        {
+            // Configuración.
+            string descripcionEsperada = null;
+            // Comportamiento.
+            ElementoMagico espada = new ElementoMagico("Espada del rey Arturo", null, 40, 0);
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
@@ -124,7 +124,7 @@ namespace Test.Library
             // Configuración.
             int dañoEsperado = 40;
             // Comportamiento.
-            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 40, 0);
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
@@ -135,7 +135,7 @@ namespace Test.Library
             // Configuración.
             int dañoEsperado = 0;
             // Comportamiento.
-            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", -1111, 0);
+            ElementoMagico espada = new ElementoMagico("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", -1111, 0);
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
@@ -147,7 +147,7 @@ namespace Test.Library
             // Configuración.
             int proteccionEsperada = 60;
             // Comportamiento.
-            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0, 60);
+            ElementoMagico espada = new ElementoMagico("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0, 60);
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
@@ -158,7 +158,7 @@ namespace Test.Library
             // Configuración.
             int proteccionEsperada = 0;
             // Comportamiento.
-            Arma espada = new Arma("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0,-1111);
+            ElementoMagico espada = new ElementoMagico("Espada del Rey Arturo", "Fue la santa espada que uso el Rey Arturo para guiar a sus caballeros en las cruzadas", 0,-1111);
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }

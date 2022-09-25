@@ -4,25 +4,80 @@ namespace Library
 {
     public class LibroHechizos : IEquipamiento, IValidable
     {
-        public string Descripcion { get; set; }
+        public string Name {get; private set;}
+        public string Descripcion { get; private set; }
 
-        public LibroHechizos(string nombre)
+        public int Ataque
+        {
+            get
+            {
+                int valor = 0;
+                foreach (IHechizo item in Hechizos)
+                {
+                    valor += item.Ataque;
+                }
+                return valor;
+            }
+        }
+
+        public int Defensa
+        {
+            get
+            {
+                int valor = 0;
+                foreach (IHechizo h in Hechizos)
+                {
+                    valor += h.Defensa;
+                }
+                return valor;
+            }
+        }
+
+        public LibroHechizos(string name, string descripcion)
         {
             // Para hacer que se eliminen espacios innecesarios al inicio o al final del string.
-            if (TextoValido(nombre))
+            if (TextoValido(name))
             {
-                this.Descripcion = nombre;
+                this.Name = name;
+            }
+            else
+            {
+                this.Name = null;
+            }
+             if (TextoValido(descripcion))
+            {
+                this.Descripcion = descripcion;
             }
             else
             {
                 this.Descripcion = null;
             }
         }
-        public List<Hechizo> Hechizos { get; private set; } = new List<Hechizo>();
+       // public List<Hechizo> Hechizos { get; private set; } = new List<Hechizo>();
+       public List<IHechizo> Hechizos { get; private set; } = new List<IHechizo>();       
 
-        public bool TextoValido(string nombre)
+        public void AgregarHechizo(IHechizo h)
         {
-            if (nombre == null || nombre.Length == 0 || NoTieneLetrasNumeros(nombre))
+            this.Hechizos.Add(h);
+        }
+
+        public void QuitarHechizo(IHechizo h)
+        {
+            this.Hechizos.Remove(h);
+        }
+
+        public void ImprimirHechizos()
+        {
+            foreach (var hechizo in Hechizos)
+            {
+                Console.WriteLine($"Descripción: {hechizo.Descripcion} \nValor de Ataque {hechizo.Ataque} \nValor de defensa {hechizo.Defensa}");
+            }
+        }
+
+
+             public bool TextoValido(string name)
+        {
+            if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
             {
                 return false;
             }
@@ -55,47 +110,15 @@ namespace Library
             return formatoIncorrecto;
         }
 
-        public int Ataque
+        public bool ValorMayorIgualCero(int valor)
         {
-            get
+            if (valor < 0)
             {
-                int valor = 0;
-                foreach (Hechizo item in Hechizos)
-                {
-                    valor += item.Ataque;
-                }
-                return valor;
+                return false;
             }
-        }
-
-        public int Defensa
-        {
-            get
+            else
             {
-                int valor = 0;
-                foreach (Hechizo h in Hechizos)
-                {
-                    valor += h.Defensa;
-                }
-                return valor;
-            }
-        }
-
-        public void AgregarHechizo(Hechizo h)
-        {
-            this.Hechizos.Add(h);
-        }
-
-        public void QuitarHechizo(Hechizo h)
-        {
-            this.Hechizos.Remove(h);
-        }
-
-        public void ImprimirHechizos()
-        {
-            foreach (var hechizo in Hechizos)
-            {
-                Console.WriteLine($"Descripción: {hechizo.Descripcion} \nValor de Ataque {hechizo.Ataque} \nValor de defensa {hechizo.Defensa} \nTipo de hechizo {hechizo.Tipo}");
+                return true;
             }
         }
 

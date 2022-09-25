@@ -6,40 +6,54 @@ namespace Library;
 public class Mago : IPersonaje
 {
 
-    public string Nombre { get; set; }
+    public string Name { get; private set; }
     private int fuerza = 10;
     public int Fuerza { get { return fuerza; } }
     private int vida = 100;
     public int Vida { get { return vida; } set { this.vida = value; } }
 
+    public int Conocimiento { get
+    {
+        if(this.LibroDeHechizosEquipado != null)
+          {
+          
+          return Inventario.LibroDeHechizos.Hechizos.Count();
+
+          }
+          else{
+            return 0;
+          }
+    } }
+    // Habría que contemplar el nivel o sabiduría del mago dependiendo del libro en particular
+    // Viendo si hay que sumar el poder de defensa y ataque de los hechizos, o el total de hechizos
+    //public int Conocimiento {get{};}
     // Si se quiere usar hechizos que aumenten la defensa tendría que haber un valor de defensa nato que luego pueda aumentarse
-    public int Defensa { get; private set; }
-    public Inventario Inventario { get; }
-
-    public LibroHechizos LibroDeHechizos { get; private set; }
-
-    public int NivelMagico { get; set; }
+    public int Defensa{get;set;}
+  
+    public InventarioMago Inventario { get; }
 
     public Arma ArmaEquipada { get; set; }
 
     public List<Ropa> RopaEquipada { get; }
 
-    public Mago(int vida, string nombre)
+    public LibroHechizos LibroDeHechizosEquipado { get; private set; }
+
+    public Mago( string name)
     {
-        if (TextoValido(nombre))
+        if (TextoValido(name))
         {
-            this.Nombre = nombre;
+            this.Name = name;
         }
         else
         {
-            this.Nombre = null;
+            this.Name = null;
         }
         RopaEquipada = new List<Ropa>();
-        Inventario = new Inventario();
+        Inventario = new InventarioMago();
     }
-    public bool TextoValido(string nombre)
+    public bool TextoValido(string name)
     {
-        if (nombre == null || nombre.Length == 0 || NoTieneLetrasNumeros(nombre))
+        if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
         {
             return false;
         }
@@ -74,7 +88,8 @@ public class Mago : IPersonaje
 
     public void EquiparArma(Arma arma)
     {
-        if (Inventario.Armas.Contains(arma))
+        if (Inventario.Elementos.Contains(arma))
+        //if(Inventario.Armas.Contains(arma)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
         {
             this.ArmaEquipada = arma;
         }
@@ -90,7 +105,8 @@ public class Mago : IPersonaje
     }
     public void EquiparRopa(Ropa ropa)
     {
-        if (Inventario.Ropas.Contains(ropa))
+        if (Inventario.Elementos.Contains(ropa))
+        //if(Inventario.Ropas.Contains(ropa)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
         {
             this.RopaEquipada.Add(ropa);
         }
@@ -117,48 +133,59 @@ public class Mago : IPersonaje
         }
     }
 
-    public void UsarHechizoDefensa(Hechizo hechizo)
-    {
-        if (hechizo.Tipo == "Defensa")
-        {
 
-        }
-    }
 
-    public void AtacarConHechizo(IPersonaje personaje, Hechizo hechizo)
+    public void EquiparLibro(LibroHechizos libro)
     {
-        if (hechizo.Tipo == "Ataque")
+        if (this.Inventario.LibroDeHechizos != null)
         {
-            if (hechizo.Ataque >= personaje.ObtenerDefensaTotal())
-            {
-                personaje.Vida = personaje.Vida - (hechizo.Ataque - personaje.ObtenerDefensaTotal());
-            }
+            LibroDeHechizosEquipado = libro;
         }
         else
         {
-            Console.WriteLine($"Este hechizo es de tipo {hechizo.Tipo}, por lo que no puede usarse para atacar");
+            Console.WriteLine("El mago no posee un libro de hechizos que pueda equipar");
         }
-
-
     }
 
+    public void DesequiparLibro()
+    {
+        LibroDeHechizosEquipado = null;
+    }
+
+    // Zona dudosa
+
+
+       public void ActualizarConocimiento()
+      {
+          
+      }
+
+       public void UsarHechizoDefensa(IPersonaje personaje, HechizoDefensa hechizo)
+    {
+        personaje.Defensa += hechizo.Defensa;
+    } 
+
+    public void AtacarConHechizo(IPersonaje personaje, HechizoAtaque hechizo)
+    {
+        if (hechizo.Ataque >= personaje.ObtenerDefensaTotal())
+        {
+            personaje.Vida = personaje.Vida - (hechizo.Ataque - personaje.ObtenerDefensaTotal());
+        }
+    }
     // Obtener Ataque Total 
     public int ObtenerAtaqueTotal()
     {
         int ataqueTotal = this.Fuerza;
-
-
+        //int ataqueTotal = this.Ataque;
         if (this.ArmaEquipada != null)
         {
             ataqueTotal += this.ArmaEquipada.Ataque;
 
         }
-        if (this.LibroDeHechizos != null)
+        foreach (var item in this.Inventario.ElementosMagicos)
         {
-            ataqueTotal += this.LibroDeHechizos.Defensa;
-
+            ataqueTotal += item.Ataque;
         }
-
         return ataqueTotal;
 
 
@@ -166,7 +193,7 @@ public class Mago : IPersonaje
     }
     public int ObtenerDefensaTotal()
     {
-        int defensaTotal = 0;
+        int defensaTotal = this.Defensa;
         foreach (var item in RopaEquipada)
         {
             defensaTotal += item.Defensa;
@@ -175,20 +202,19 @@ public class Mago : IPersonaje
         {
             defensaTotal += this.ArmaEquipada.Defensa;
         }
-        if (this.LibroDeHechizos != null)
+        return defensaTotal; ;
+    }
+
+ public bool ValorMayorIgualCero(int valor)
         {
-            defensaTotal += this.LibroDeHechizos.Defensa;
+            if (valor < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
-        return defensaTotal;
-    }
-
-    public void AgregarLibro(LibroHechizos libro)
-    {
-        this.LibroDeHechizos = libro;
-    }
-    public void QuitarLibro(LibroHechizos libro)
-    {
-        this.LibroDeHechizos = null;
-    }
 }

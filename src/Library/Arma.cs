@@ -1,19 +1,17 @@
-using System;
-using System.Collections.Generic;
 
 namespace Library
 {
-    public class Arma : IEquipamiento
+    public class Arma : IEquipamiento, IValidable
     {
         public string Name { get; private set; }
         public string Descripcion { get; private set; }
         public int Ataque { get; private set; }
         public int Defensa { get; private set; }
-        public Arma(string nombre, string descripcion, int ataque, int defensa)
+        public Arma(string name, string descripcion, int ataque, int defensa)
         {
-            if (TextoValido(nombre))
+            if (TextoValido(name))
             {
-                this.Name = nombre.Trim();
+                this.Name = name.Trim();
             }
             else
             {
@@ -27,7 +25,7 @@ namespace Library
             {
                 this.Descripcion = null;
             }
-            if (ValoresDefensaAtaqueValidos(ataque))
+            if (ValorMayorIgualCero(ataque))
             {
                 this.Ataque = ataque;
             }
@@ -35,7 +33,7 @@ namespace Library
             {
                 this.Ataque = 0;
             }
-            if (ValoresDefensaAtaqueValidos(defensa))
+            if (ValorMayorIgualCero(defensa))
             {
                 this.Defensa = defensa;
             }
@@ -44,9 +42,9 @@ namespace Library
                 this.Defensa = 0;
             }
         }
-        public bool TextoValido(string nombre)
+        public bool TextoValido(string name)
         {
-            if (nombre == null || nombre.Length == 0 || NoTieneLetrasNumeros(nombre))
+            if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
             {
                 return false;
             }
@@ -79,7 +77,7 @@ namespace Library
             return formatoIncorrecto;
         }
 
-        public bool ValoresDefensaAtaqueValidos(int valor)
+        public bool ValorMayorIgualCero(int valor)
         {
             if (valor < 0)
             {
@@ -90,5 +88,7 @@ namespace Library
                 return true;
             }
         }
+
+        
     }
 }

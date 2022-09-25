@@ -7,52 +7,52 @@ namespace Test.Library;
     {
 
         [Test]
-        public void CrearEnanoNombreCorrecto()
+        public void CrearEnanoNameCorrecto()
         {
-            string nombreEsperado = "Golf";
+            string nameEsperado = "Golf";
             Enano golf = new Enano("Golf");
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
 
         }
         
         [Test]
-        public void CrearEnanoNombreVacio()
+        public void CrearEnanoNameVacio()
         {
-            string nombreEsperado = null;
+            string nameEsperado = null;
             Enano golf = new Enano("");
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
         }
          [Test]
-        public void CrearEnanoNombreEspaciosEnBlanco()
+        public void CrearEnanoNameEspaciosEnBlanco()
         {
-            string nombreEsperado = null;
+            string nameEsperado = null;
             Enano golf = new Enano("    ");
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
         }
 
          [Test]
-        public void CrearEnanoNombreNulo()
+        public void CrearEnanoNameNulo()
         {
-            string nombreEsperado = null;
+            string nameEsperado = null;
             Enano golf = new Enano(null);
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
         }
 
         [Test]
         public void CrearEnanoNombrSoloSignos()
         {
-            string nombreEsperado = null;
+            string nameEsperado = null;
             Enano golf = new Enano("-_?)=)");
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
 
         }
 
          [Test]
-        public void CrearEnanoNombreConEspaciosAtrasYAdelante()
+        public void CrearEnanoNameConEspaciosAtrasYAdelante()
         {
-            string nombreEsperado = "d d";
+            string nameEsperado = "d d";
             Enano golf = new Enano("     d d ");
-            Assert.AreEqual(nombreEsperado, golf.Nombre);
+            Assert.AreEqual(nameEsperado, golf.Name);
         }
         [Test]
         public void ArmaEquipada()
@@ -60,7 +60,7 @@ namespace Test.Library;
             // Configuración.
             Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 40, 0);
             Enano golf = new Enano("Golf");
-            golf.Inventario.AgregarArma(maso);
+            golf.Inventario.AgregarElemento(maso);
             // Comportamiento.
             golf.EquiparArma(maso);
             // Comprobación.
@@ -73,7 +73,7 @@ namespace Test.Library;
             // Configuración.
             Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 40, 0);
             Enano golf = new Enano("Golf");
-            golf.Inventario.AgregarArma(maso);
+            golf.Inventario.AgregarElemento(maso);
             golf.EquiparArma(maso);
             // Comportamiento.
             golf.DesequiparArma();
@@ -89,7 +89,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Ropa armadura1 = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Enano golf = new Enano("Golf");
-            golf.Inventario.AgregarRopa(armadura);
+            golf.Inventario.AgregarElemento(armadura);
             // Comportamiento.
             golf.EquiparRopa(armadura);
             // Comprobación.
@@ -103,7 +103,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Ropa armadura1 = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Enano golf = new Enano("Golf");
-            golf.Inventario.AgregarRopa(armadura);
+            golf.Inventario.AgregarElemento(armadura);
             golf.EquiparRopa(armadura);
             // Comportamiento.
             golf.QuitarRopa(armadura);
@@ -120,8 +120,8 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Enano golf = new Enano("Golf");
             Enano rud = new Enano("Rud");
-            rud.Inventario.AgregarRopa(armadura);
-            golf.Inventario.AgregarArma(maso);
+            rud.Inventario.AgregarElemento(armadura);
+            golf.Inventario.AgregarElemento(maso);
             golf.EquiparArma(maso);
             rud.EquiparRopa(armadura);
             // Comportamiento.
@@ -138,7 +138,7 @@ namespace Test.Library;
             Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 40, 0);
             Enano golf = new Enano("Golf");
             Enano rud = new Enano("Rud");
-            golf.Inventario.AgregarArma(maso);
+            golf.Inventario.AgregarElemento(maso);
             golf.EquiparArma(maso);
             // Comportamiento.
             golf.Atacar(rud);
@@ -166,7 +166,7 @@ namespace Test.Library;
             Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Enano golf = new Enano("Golf");
             Enano rud = new Enano("Rud");
-            rud.Inventario.AgregarRopa(armadura);
+            rud.Inventario.AgregarElemento(armadura);
             rud.EquiparRopa(armadura);
             // Comportamiento.
             golf.Atacar(rud);
@@ -181,7 +181,7 @@ namespace Test.Library;
             Enano golf = new Enano("Golf");
             Enano rud = new Enano("Rud");
             Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 400, 0);
-            golf.Inventario.AgregarArma(maso);
+            golf.Inventario.AgregarElemento(maso);
             golf.EquiparArma(maso);
             // Comportamiento.
             golf.Atacar(rud);

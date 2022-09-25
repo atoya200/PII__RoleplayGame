@@ -5,33 +5,34 @@ namespace Library;
 
 public class Elfo : IPersonaje
 {
-    public string Nombre { get; set; }
+    public string Name {get; private set; }
     private int fuerza = 10;
     public int Fuerza { get { return fuerza; } }
     private int vida = 100;
     public int Vida { get { return vida; } set { this.vida = value; } }
-    public Inventario Inventario { get; }
+    public InventarioElfo Inventario { get; }
 
     public Arma ArmaEquipada { get; private set; }
-
+    public int Defensa { get; set; }
     public List<Ropa> RopaEquipada { get; }
 
-    public Elfo(string nombre)
+    public Elfo(string name)
     {
-        if (TextoValido(nombre))
+        if (TextoValido(name))
         {
-            this.Nombre = nombre;
+            this.Name = name;
         }
         else
         {
-            this.Nombre = null;
-        }
+            this.Name = null;
+        }        
+        //this.Defensa = 0;
         RopaEquipada = new List<Ropa>();
-        Inventario = new Inventario(); ;
+        Inventario = new InventarioElfo(); ;
     }
-    public bool TextoValido(string nombre)
+    public bool TextoValido(string name)
     {
-        if (nombre == null || nombre.Length == 0 || NoTieneLetrasNumeros(nombre))
+        if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
         {
             return false;
         }
@@ -64,27 +65,25 @@ public class Elfo : IPersonaje
     }
     public void Atacar(IPersonaje personaje)
     {
-        /* if (this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
-        {
-            personaje.Vida = personaje.Vida - (this.ObtenerAtaqueTotal() - personaje.ObtenerDefensaTotal());
-        } */
+        
         if(this.ObtenerAtaqueTotal() >= personaje.ObtenerDefensaTotal())
         {
-            int dañoTotal = (this.ObtenerAtaqueTotal() -personaje.ObtenerDefensaTotal());
-            if(dañoTotal > personaje.Vida)
+            int vidaNueva = this.Vida - (this.ObtenerAtaqueTotal() -personaje.ObtenerDefensaTotal());
+            if(ValorMayorIgualCero(vidaNueva))
             {
-                personaje.Vida = 0;
+                personaje.Vida = vidaNueva;
             }
             else
             {
-                personaje.Vida -=dañoTotal;
+                personaje.Vida =0;
             }
         }
     }
 
-    public void EquiparArma(Arma arma)
-    {
-        if (Inventario.Armas.Contains(arma))
+   public void EquiparArma(Arma arma)
+   {
+    if(Inventario.Elementos.Contains(arma))
+    //if(Inventario.Armas.Contains(arma)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
         {
             this.ArmaEquipada = arma;
         }
@@ -92,15 +91,16 @@ public class Elfo : IPersonaje
         {
             Console.WriteLine("Esa arma no esta en el inventario");
         }
-    }
+   }
 
     public void DesequiparArma()
     {
         this.ArmaEquipada = null;
     }
-    public void EquiparRopa(Ropa ropa)
+  public void EquiparRopa(Ropa ropa)
     {
-        if (Inventario.Ropas.Contains(ropa))
+        if(Inventario.Elementos.Contains(ropa))
+        //if(Inventario.Ropas.Contains(ropa)) //ya no existe Ropas, todo es lo mismo, por ende podemos meterlo junto
         {
             this.RopaEquipada.Add(ropa);
         }
@@ -129,6 +129,7 @@ public class Elfo : IPersonaje
     public int ObtenerDefensaTotal()
     {
         int defensaTotal = 0;
+        //int defensaTotal = this.Defensa;
         foreach (var item in RopaEquipada)
         {
             defensaTotal += item.Defensa;
@@ -139,4 +140,16 @@ public class Elfo : IPersonaje
         }
         return defensaTotal;
     }
+
+    public bool ValorMayorIgualCero(int valor)
+        {
+            if (valor < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 }

@@ -8,58 +8,58 @@ namespace Test.Library
     [TestFixture]
     public class TestRopa
     {
-        // Conjunto de test sobre el nombre de la Ropa.
+        // Conjunto de test sobre el name de la Ropa.
         [Test]
-        public void RopaNombreCorrecto()
+        public void RopaNameCorrecto()
         {
             // Configuración.
-            string nombreEsperado = "Armadura de Bronce";
+            string nameEsperado = "Armadura de Bronce";
             // Comportamiento.
             Ropa armadura = new Ropa("Armadura de Bronce", "Forjada por los enanos hace siglos", 0, 25);
             // Comprobación.
-            Assert.AreEqual(nombreEsperado, armadura.Name);
+            Assert.AreEqual(nameEsperado, armadura.Name);
         }
         [Test]
-        public void RopaNombreVacio()
+        public void RopaNameVacio()
         {
             // Configuración.
-            string nombreEsperado = null;
+            string nameEsperado = null;
             // Comportamiento.
             Ropa armadura = new Ropa("", "Forjada por los enanos hace siglos", 0, 25);
             // Comprobación.
-            Assert.AreEqual(nombreEsperado, armadura.Name);
+            Assert.AreEqual(nameEsperado, armadura.Name);
         }
         [Test]
-        public void RopaNombreEspaciosEnBlanco()
+        public void RopaNameEspaciosEnBlanco()
         {
             // Configuración.
-            string nombreEsperado = null;
+            string nameEsperado = null;
             // Comportamiento.
             Ropa armadura = new Ropa("   ", "Forjada por los enanos hace siglos", 0, 25);
             // Comprobación.
-            Assert.AreEqual(nombreEsperado, armadura.Name);
+            Assert.AreEqual(nameEsperado, armadura.Name);
         }
 
         [Test]
-        public void RopaNombreSoloConSignos()
+        public void RopaNameSoloConSignos()
         {
             // Configuración.
-            string nombreEsperado = null;
+            string nameEsperado = null;
             // Comportamiento.
             Ropa armadura = new Ropa("--.-.-=)", "Forjada por los enanos hace siglos", 0, 25);
             // Comprobación.
-            Assert.AreEqual(nombreEsperado, armadura.Name);
+            Assert.AreEqual(nameEsperado, armadura.Name);
         }
 
         [Test]
-        public void RopaNombreNulo()
+        public void RopaNameNulo()
         {
             // Configuración.
-            string nombreEsperado = null;
+            string nameEsperado = null;
             // Comportamiento.
             Ropa armadura = new Ropa(null, "Forjada por los enanos hace siglos", 0, 25);
             // Comprobación.
-            Assert.AreEqual(nombreEsperado, armadura.Name);
+            Assert.AreEqual(nameEsperado, armadura.Name);
         }
 
         // Pruebas de la descripción del Ropa.

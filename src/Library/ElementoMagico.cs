@@ -1,14 +1,14 @@
-using System.Collections.Generic;
+namespace Library;
 
-namespace Library
+public class ElementoMagico: IValidable
 {
-    public class Ropa : IEquipamiento
-    {
-        public string Name { get; private set; }
-        public string Descripcion { get; private set; }
-        public int Ataque { get; private set; }
-        public int Defensa { get; private set; }
-        public Ropa(string name, string descripcion, int ataque, int defensa)
+    public string Name { get; private set; }
+    public string Descripcion { get; private set; }
+    public int Ataque { get; private set; }
+    public int Defensa { get; private set; }
+
+
+    public ElementoMagico(string name, string descripcion, int ataque, int defensa)
         {
             if (TextoValido(name))
             {
@@ -42,6 +42,8 @@ namespace Library
             {
                 this.Defensa = 0;
             }
+        
+
         }
         public bool TextoValido(string name)
         {
@@ -79,7 +81,7 @@ namespace Library
             return formatoIncorrecto;
         }
 
-           public bool ValorMayorIgualCero(int valor)
+            public bool ValorMayorIgualCero(int valor)
         {
             if (valor < 0)
             {
@@ -91,5 +93,4 @@ namespace Library
             }
         }
 
-    }
 }

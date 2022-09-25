@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 namespace Library
 {   
-    public interface IPersonaje
+    public interface IPersonaje: IValidable
     {
         public int Vida {get;set;}
-        public string Nombre {get; set;}
+        public string Name {get;}
         public int Fuerza  {get;}
+
+        public int Defensa {get;set;}
 
         public Arma ArmaEquipada {get;}
 
@@ -17,7 +19,7 @@ namespace Library
         public void EquiparArma(Arma arma);
         public void DesequiparArma();
 
-        public Inventario Inventario {get;}
+        //public IInventario Inventario {get;}
 
         public void Atacar(IPersonaje personaje);
         public int ObtenerAtaqueTotal();

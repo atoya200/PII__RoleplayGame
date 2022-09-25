@@ -56,7 +56,7 @@ Cada equipo deberá crear las clases representadas en el modelo anterior. Cada i
 
 ### Personajes
 
-Los personajes tienen, además de sus items, un nombre y una cantidad de vida limitada. 
+Los personajes tienen, además de sus items, un name y una cantidad de vida limitada. 
 
 Sus items pueden además quitarse o cambiarse por otros similares (por ejemplo, darle a un mago un bastón mágico nuevo, o simplemente quitarle el que tiene).
 
