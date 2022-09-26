@@ -4,6 +4,4 @@ public interface IHechizo : IValidable
     public string Descripcion { get; }
     public int Ataque { get; }
     public int Defensa { get; }
-    public void MostrarContenido();
-
 }

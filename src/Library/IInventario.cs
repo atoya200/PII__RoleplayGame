@@ -17,6 +17,7 @@ namespace Library;
         public void AgregarArma(Arma arma);
        
         public void QuitarArma(Arma arma);
+        public void MostrarContenido();
        
        
 
