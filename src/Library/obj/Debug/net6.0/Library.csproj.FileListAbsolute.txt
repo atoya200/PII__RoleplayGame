@@ -10,3 +10,15 @@ C:\Users\Agustín Toya\OneDrive - Universidad Católica del Uruguay\Segundo seme
 C:\Users\Agustín Toya\OneDrive - Universidad Católica del Uruguay\Segundo semestre\Programación II\Ejercicios\Role_Plays\PII__RoleplayGame\src\Library\obj\Debug\net6.0\refint\Library.dll
 C:\Users\Agustín Toya\OneDrive - Universidad Católica del Uruguay\Segundo semestre\Programación II\Ejercicios\Role_Plays\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.pdb
 C:\Users\Agustín Toya\OneDrive - Universidad Católica del Uruguay\Segundo semestre\Programación II\Ejercicios\Role_Plays\PII__RoleplayGame\src\Library\obj\Debug\net6.0\ref\Library.dll
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\bin\Debug\net6.0\Library.deps.json
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\bin\Debug\net6.0\Library.dll
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\bin\Debug\net6.0\Library.pdb
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.dll
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\refint\Library.dll
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.pdb
+C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\ref\Library.dll
