@@ -83,6 +83,7 @@ public class Enano : IPersonaje
             }
         }
     }
+        // Para este método decidimos que el ataque de un personaje al otro va a ser el ataque total del atacante menos la defensa total del atacado. Si el resultado de esta resta es mayor o igual a 0, la nueva vida del personaje atacado será esta, sino el personaje morirá.
 
     public int ObtenerAtaqueTotal()
     {
@@ -96,6 +97,7 @@ public class Enano : IPersonaje
         }
 
     }
+    // Para este método decidimos que el ataque total dependa de dos cosas, la fuerza del personaje y la fuerza del arma que tiene equipada, si es que tiene.
     public int ObtenerDefensaTotal()
     {
         int defensaTotal = this.Defensa;
@@ -109,7 +111,7 @@ public class Enano : IPersonaje
         }
         return defensaTotal;
     }
-
+    // Para este método decidimos que el personaje puede tener varias piezas de armadura, por lo tanto, la defensa total va a ser la suma de cada pieza de armadura que tiene y la defensa del arma equipada, si es que el personaje tiene un arma equipada.
     public bool TextoValido(string name)
     {
         if (name == null || name.Length == 0 || NoTieneLetrasNumeros(name))
