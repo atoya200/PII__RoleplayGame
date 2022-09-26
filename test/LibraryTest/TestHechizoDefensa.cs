@@ -12,23 +12,8 @@ public class TestHechizoDefensa
     {
     }
 
-    [Test]
-    public void TestConstuctor() //En este test, testeamos en general la entrada de los parámetros y si se asgignan correctamente.
-                                //Para lograr esto, introducimos los parámetros creando el objeto, y a la vez determinamos que sería lo esperado en su asignación a los atributos.
-    {
-        // Atributos esperados
-        string expectedName = "Super fuerza";
-        string expectedType = "Ataque";
-        int expectedAttack = 20;
-        int expectedDeffense = 0;
-        // Creación del objeto
-        HechizoDefensa testHechizoDefensa = new HechizoDefensa("Super fuerza",20,0);
-        // Comprobante
-        Assert.AreEqual(expectedName,testHechizoDefensa.Descripcion);
-        Assert.AreEqual(expectedType,testHechizoDefensa.Tipo);
-        Assert.AreEqual(expectedAttack,testHechizoDefensa.Ataque);
-        Assert.AreEqual(expectedDeffense,testHechizoDefensa.Defensa);
-    }
+  
+   
     [Test]
     public void TestWithWrongName()
     {

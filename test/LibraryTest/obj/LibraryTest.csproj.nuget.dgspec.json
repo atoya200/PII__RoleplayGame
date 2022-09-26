@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ucu\\p2\\pii__roleplaygame\\test\\librarytest\\LibraryTest.csproj": {}
+    "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\test\\LibraryTest\\LibraryTest.csproj": {}
   },
   "projects": {
-    "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\Library.csproj": {
+    "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
-        "outputPath": "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\obj\\",
+        "projectPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\Agustín Toya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Agustín Toya\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,21 +53,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\ucu\\p2\\pii__roleplaygame\\test\\librarytest\\LibraryTest.csproj": {
+    "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\test\\LibraryTest\\LibraryTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ucu\\p2\\pii__roleplaygame\\test\\librarytest\\LibraryTest.csproj",
+        "projectUniqueName": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\test\\LibraryTest\\LibraryTest.csproj",
         "projectName": "LibraryTest",
-        "projectPath": "C:\\ucu\\p2\\pii__roleplaygame\\test\\librarytest\\LibraryTest.csproj",
-        "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
-        "outputPath": "C:\\ucu\\p2\\pii__roleplaygame\\test\\librarytest\\obj\\",
+        "projectPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\test\\LibraryTest\\LibraryTest.csproj",
+        "packagesPath": "C:\\Users\\Agustín Toya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\test\\LibraryTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Agustín Toya\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -79,8 +79,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\Library.csproj": {
-                "projectPath": "C:\\ucu\\p2\\pii__roleplaygame\\src\\Library\\Library.csproj"
+              "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj": {
+                "projectPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj"
               }
             }
           }
@@ -132,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

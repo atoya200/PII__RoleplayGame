@@ -1,11 +1,8 @@
 namespace Library;
 
-public class ElementoMagico: IValidable
+public class ElementoMagico: IEquipamiento
 {
-    /* 
-     Elemento mágico no implementa a IEquipamiento por que de ser así podría incluirse en el inventario
-     de los enanos o de los elfos, cuando los únicos que pueden usarlos son los magos. 
-    */
+  
     public string Name { get; private set; }
     public string Descripcion { get; private set; }
     public int Ataque { get; private set; }
