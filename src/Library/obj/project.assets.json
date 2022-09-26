@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Agustín Toya\\.nuget\\packages\\": {}
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\roleplayp2\\PII__RoleplayGame\\src\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\Library.csproj",
-      "packagesPath": "C:\\Users\\Agustín Toya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Agustín Toya\\OneDrive - Universidad Católica del Uruguay\\Segundo semestre\\Programación II\\Ejercicios\\Role_Plays\\PII__RoleplayGame\\src\\Library\\obj\\",
+      "projectPath": "C:\\Users\\USUARIO\\Desktop\\roleplayp2\\PII__RoleplayGame\\src\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USUARIO\\Desktop\\roleplayp2\\PII__RoleplayGame\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Agustín Toya\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

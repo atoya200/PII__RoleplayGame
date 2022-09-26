@@ -19,6 +19,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
+        // En este test creamos un arma con un nombre correcto, esperando que nameEsperado sea igual que el nombre de espada.
         [Test]
         public void ArmaNameVacio()
         {
@@ -29,6 +30,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
+        // En este test creamos un arma con un nombre vacío, esperando que el nombre de espada sea nulo.
         [Test]
         public void ArmaNameEspaciosEnBlanco()
         {
@@ -39,7 +41,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
-
+        // En este test creamos un arma con un nombre vacío, esperando que el nombre de espada sea nulo.
         [Test]
         public void ArmaNameSoloConSignos()
         {
@@ -50,7 +52,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
-
+        // En este test creamos un arma con un nombre inválido, esperando que el nombre de espada sea nulo.
         [Test]
         public void ArmaNameNulo()
         {
@@ -61,7 +63,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
-
+        // En este test creamos un arma con un nombre nulo, esperando que el nombre de espada sea nulo.
         // Pruebas de la descripción del arma.
 
         [Test]
@@ -74,6 +76,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
+        // En este test creamos un arma con descripción correcta, esperando que la descripción del arma sea igual a descripcionEsperada.
         [Test]
         public void ArmaDescripcionVacia()
         {
@@ -84,6 +87,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
+        // En este test creamos un arma con descripción vacía, esperando que la descripción del arma sea nula.
         [Test]
         public void ArmaDescripcionEspaciosEnBlanco()
         {
@@ -94,7 +98,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
-
+        // En este test creamos un arma con descripción vacía, esperando que la descripción del arma sea nula.
         [Test]
         public void ArmaDescripcionSoloConSignos()
         {
@@ -105,7 +109,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
-
+        // En este test creamos un arma con descripción nula, esperando que la descripción del arma sea nula.
         [Test]
         public void ArmaDescripcionNula()
         {
@@ -116,7 +120,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
-
+        // En este test creamos un arma con descripción nula, esperando que la descripción del arma sea nula.
         // Prueba con ataque.
         [Test]
         public void AtaqueCorrecto()
@@ -128,7 +132,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
-
+        // En este test creamos un arma con ataque válido, esperando que el daño sea dañoEsperado.
         [Test]
         public void AtaqueMenorACero()
         {
@@ -139,7 +143,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
-
+        // En este test creamos un arma con ataque inválido, esperando que el daño sea nulo.
         // Prueba con defensa.
         [Test]
         public void DefensaCorrecta()
@@ -151,7 +155,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
-
+        // En este test creamos un arma con defensa válido, esperando que la defensa sea proteccionEsperada.
         [Test]
         public void DefensaMenorACero()
         {
@@ -162,7 +166,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
-
+        // En este test creamos un arma con defensa válido, esperando que la defensa sea nula.
 
 
     }

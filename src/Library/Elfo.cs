@@ -128,6 +128,7 @@ public class Elfo : IPersonaje
         }
 
     }
+    // Para este método 
     public int ObtenerDefensaTotal()
     {
 

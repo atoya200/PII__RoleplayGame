@@ -18,6 +18,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, armadura.Name);
         }
+        // En este test creamos una armadura con un nombre correcto, esperando que nameEsperado sea igual que el nombre de armadura.
         [Test]
         public void RopaNameVacio()
         {
@@ -28,6 +29,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, armadura.Name);
         }
+        // En este test creamos una armadura con un nombre correcto, esperando que nameEsperado sea igual que el nombre de armadura.
         [Test]
         public void RopaNameEspaciosEnBlanco()
         {
