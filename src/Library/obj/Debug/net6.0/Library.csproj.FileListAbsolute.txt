@@ -22,3 +22,15 @@ C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\refint\Library.dll
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\Library.pdb
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\src\Library\obj\Debug\net6.0\ref\Library.dll
+C:\ucu\p2\pii__roleplaygame\src\Library\bin\Debug\net6.0\Library.deps.json
+C:\ucu\p2\pii__roleplaygame\src\Library\bin\Debug\net6.0\Library.dll
+C:\ucu\p2\pii__roleplaygame\src\Library\bin\Debug\net6.0\Library.pdb
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.csproj.AssemblyReference.cache
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.AssemblyInfoInputs.cache
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.AssemblyInfo.cs
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.csproj.CoreCompileInputs.cache
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.dll
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\refint\Library.dll
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\Library.pdb
+C:\ucu\p2\pii__roleplaygame\src\Library\obj\Debug\net6.0\ref\Library.dll
