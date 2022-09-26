@@ -119,7 +119,7 @@ namespace Test.Library;
         public void AtacarConProteccion()
         {
             // Configuración.
-            Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 40, 0);
+            Arma maso = new Arma("Maso de Odin", "Se cree que fue forjado por los enanos al servicio del dios Odin", 100, 0);
             Ropa armadura = new Ropa("Armadura de plata", "Fundida en plata te protegera de los ataques de cientos de enemigos", 0, 30);
             Enano golf = new Enano("Golf");
             Enano rud = new Enano("Rud");
@@ -130,7 +130,7 @@ namespace Test.Library;
             // Comportamiento.
             golf.Atacar(rud);
             // Comprobación.
-            Assert.AreEqual(80, rud.Vida);
+            Assert.AreEqual(40, rud.Vida);
 
         }
         // En este test creamos un arma, una armadura y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al enano con la armadura y esperamos que la vida del enano atacado sea 80.
@@ -146,10 +146,10 @@ namespace Test.Library;
             // Comportamiento.
             golf.Atacar(rud);
             // Comprobación.
-            Assert.AreEqual(50, rud.Vida);
+            Assert.AreEqual(70, rud.Vida);
 
         }
-        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al otro enano y esperamos que la vida del enano atacado sea 50.
+        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al otro enano y esperamos que la vida del enano atacado sea 70, ya que tiene mucha resistencia, como los otros no tienen estos tienen 20 de defensa por defecto.
         [Test]
         public void AtacarSinArmaSinProteccion()
         {
@@ -159,10 +159,10 @@ namespace Test.Library;
             // Comportamiento.
             golf.Atacar(rud);
             // Comprobación.
-            Assert.AreEqual(90, rud.Vida);
+            Assert.AreEqual(100, rud.Vida);
 
         }
-        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 90.
+        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 100 ya que su defensa nata le permite no perder vida por ese ataque.
         [Test]
         public void AtacarSinArmaConProteccion()
         {

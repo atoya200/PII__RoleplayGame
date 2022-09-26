@@ -29,7 +29,7 @@ public class Enano : IPersonaje
             this.Name = null;
         }
         this.Vida = 100;
-        this.Defensa = 0;
+        this.Defensa = 20;
         RopaEquipada = new List<Ropa>();
         Inventario = new InventarioEnano();
     }

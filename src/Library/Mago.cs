@@ -187,7 +187,10 @@ public class Mago : IPersonaje
 
     public void UsarHechizoDefensa(IPersonaje personaje, HechizoDefensa hechizo)
     {
-        personaje.Defensa += hechizo.Defensa;
+        if(LibroDeHechizosEquipado.Hechizos.Contains(hechizo))
+        {
+            personaje.Defensa += hechizo.Defensa;
+        }
     }
 
     public void AtacarConHechizo(IPersonaje personaje, HechizoAtaque hechizo)

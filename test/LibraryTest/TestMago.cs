@@ -360,5 +360,45 @@ namespace Test.Library
         }
         // En este test creamos un arma y dos magos, todos válidos. Luego hacemos que el mago con el arma y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
 
+           [Test]
+        public void AumetnarDefensaPeronsaje()
+        {
+            // Configuración.
+            Mago tom = new Mago("Tom");
+            Elfo john = new Elfo("John");
+            HechizoDefensa pielDeAcero = new HechizoDefensa("Piel de acero", 20);
+            LibroHechizos grimorioGris = new LibroHechizos("Grimorio gris", "Libro del mago");
+            grimorioGris.AgregarHechizo(pielDeAcero);
+            tom.Inventario.AgregarLibro(grimorioGris);
+            tom.EquiparLibro(grimorioGris);
+            // Comportamiento.
+            tom.UsarHechizoDefensa(john, pielDeAcero);
+            // Comprobación.
+            Assert.AreEqual(20, john.Defensa);
+        }
+        // Con este test probamos que efectivamente se aumetna la defensa de un personaje con un hechizo de defensa.
+
+        [Test]
+        public void CurarPeronsaje()
+        {
+            // Configuración.
+            Mago tom = new Mago("Tom");
+            Elfo john = new Elfo("John");
+            HechizoAtaque bolaFuego = new HechizoAtaque("Bola de fuego", 70);
+            LibroHechizos grimorioAzul = new LibroHechizos("Grimorio rojo", "Libro del mago");
+            grimorioAzul.AgregarHechizo(bolaFuego);
+            tom.Inventario.AgregarLibro(grimorioAzul);
+            tom.EquiparLibro(grimorioAzul);
+            tom.AtacarConHechizo(john, bolaFuego);
+            // Comportamiento.
+            tom.Curar(john);
+            // Comprobación.
+            Assert.AreEqual(100, john.Vida);
+        }
+        /*
+         Con este test primero atacamos al personaje y luego usamos la capacidad del mago de curar
+         para restablecer a 100 su vida, que es la que elegimos en esta oportunidad como vida máxima. 
+        */
+
     }
 }
