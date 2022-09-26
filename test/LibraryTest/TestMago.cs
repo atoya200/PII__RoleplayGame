@@ -361,7 +361,7 @@ namespace Test.Library
         // En este test creamos un arma y dos magos, todos válidos. Luego hacemos que el mago con el arma y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
 
            [Test]
-        public void AumetnarDefensaPeronsaje()
+        public void AumentarDefensaPeronsaje()
         {
             // Configuración.
             Mago tom = new Mago("Tom");
