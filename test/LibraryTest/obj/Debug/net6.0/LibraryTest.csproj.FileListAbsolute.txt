@@ -202,3 +202,12 @@ C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\test\LibraryTest\obj\Debug
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\test\LibraryTest\obj\Debug\net6.0\LibraryTest.pdb
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\test\LibraryTest\obj\Debug\net6.0\LibraryTest.genruntimeconfig.cache
 C:\Users\USUARIO\Desktop\roleplayp2\PII__RoleplayGame\test\LibraryTest\obj\Debug\net6.0\ref\LibraryTest.dll
+C:\ucu\p2\pii__roleplaygame\test\librarytest\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.csproj.AssemblyReference.cache
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.AssemblyInfoInputs.cache
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.AssemblyInfo.cs
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.csproj.CoreCompileInputs.cache
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.dll
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\refint\LibraryTest.dll
+C:\ucu\p2\pii__roleplaygame\test\librarytest\obj\Debug\net6.0\LibraryTest.pdb
