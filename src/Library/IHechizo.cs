@@ -5,7 +5,5 @@ public interface IHechizo : IValidable
     public int Ataque { get; }
     public int Defensa { get; }
     public void MostrarContenido();
-    public void ImprimirArmas();
-    public void ImprimirRopa();
 
 }
