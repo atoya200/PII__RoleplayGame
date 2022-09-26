@@ -145,7 +145,7 @@ public class Mago : IPersonaje
     {
         personaje.Vida = 100;
     }
-   
+    // Para este método decidimos que el mago haga que la vida del personaje al que va a curar vuelva a ser 100, el cual es el mismo valor con el que "nace".
 
     public void Atacar(IPersonaje personaje)
     {
@@ -163,6 +163,7 @@ public class Mago : IPersonaje
             }
         }
     }
+    // Para este método decidimos que el ataque de un personaje al otro va a ser el ataque total del atacante menos la defensa total del atacado. Si el resultado de esta resta es mayor o igual a 0, la nueva vida del personaje atacado será esta, sino el personaje morirá.
 
 
 
@@ -238,10 +239,8 @@ public class Mago : IPersonaje
             ataqueTotal += item.Ataque;
         }
         return ataqueTotal;
-
-
-
     }
+    // Para este método decidimos que el ataque total dependa de tres cosas, la fuerza del personaje, el daño del arma equipada (si es que tiene) y el daño de los hechizos que tiene el mago (si es que tiene).
     public int ObtenerDefensaTotal()
     {
         int defensaTotal = this.Defensa;
@@ -255,7 +254,7 @@ public class Mago : IPersonaje
         }
         return defensaTotal; ;
     }
-
+    // Para este método decidimos que el personaje puede tener varias piezas de armadura, por lo tanto, la defensa total va a ser la suma de cada pieza de armadura que tiene y la defensa del arma equipada, si es que el personaje tiene un arma equipada.
     public bool ValorMayorIgualCero(int valor)
     {
         if (valor < 0)
