@@ -6,6 +6,7 @@ namespace Test.Library;
     public class TestEnano
     {
 
+        // En este test creamos un enano con nombre correcto, esperando que el nombre sea igual a nameEsperado.
         [Test]
         public void CrearEnanoNameCorrecto()
         {
@@ -14,7 +15,8 @@ namespace Test.Library;
             Assert.AreEqual(nameEsperado, golf.Name);
 
         }
-        // En este test creamos un enano con nombre correcto, esperando que el nombre sea igual a nameEsperado.
+
+        // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
         [Test]
         public void CrearEnanoNameVacio()
         {
@@ -23,7 +25,7 @@ namespace Test.Library;
             Assert.AreEqual(nameEsperado, golf.Name);
         }
         // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
-         [Test]
+        [Test]
         public void CrearEnanoNameEspaciosEnBlanco()
         {
             string nameEsperado = null;
@@ -31,13 +33,14 @@ namespace Test.Library;
             Assert.AreEqual(nameEsperado, golf.Name);
         }
         // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
-         [Test]
+        [Test]
         public void CrearEnanoNameNulo()
         {
             string nameEsperado = null;
             Enano golf = new Enano(null);
             Assert.AreEqual(nameEsperado, golf.Name);
         }
+
         // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
         [Test]
         public void CrearEnanoNombrSoloSignos()
@@ -47,15 +50,17 @@ namespace Test.Library;
             Assert.AreEqual(nameEsperado, golf.Name);
 
         }
+
         // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
-         [Test]
+        [Test]
         public void CrearEnanoNameConEspaciosAtrasYAdelante()
         {
             string nameEsperado = "d d";
             Enano golf = new Enano("     d d ");
             Assert.AreEqual(nameEsperado, golf.Name);
         }
-        // En este test creamos un enano con nombre inválido, esperando que el nombre sea null.
+
+        // En este test creamos un arma y se la equipamos a un enano con nombre válido. Esperamos que el arma equipada por el enano sea igual a maso.
         [Test]
         public void ArmaEquipada()
         {
@@ -68,7 +73,8 @@ namespace Test.Library;
             // Comprobación.
             Assert.AreEqual(maso, golf.ArmaEquipada);
         }
-        // En este test creamos un arma y se la equipamos a un enano con nombre válido. Esperamos que el arma equipada por el enano sea igual a maso.
+
+        // En este test creamos un arma y se la equipamos a un enano con nombre válido, luego la desequipamos. Esperamos que el arma equipada por el enano sea null.
         [Test]
         public void DesequiparArma()
         {
@@ -83,7 +89,8 @@ namespace Test.Library;
             Assert.IsFalse(golf.ArmaEquipada == maso);
 
         }
-        // En este test creamos un arma y se la equipamos a un enano con nombre válido, luego la desequipamos. Esperamos que el arma equipada por el enano sea null.
+
+        // En este test creamos una armadura y se la equipamos a un enano con nombre válido. Esperamos que la armadura equipada por el enano contenga a armadura.
         [Test]
         public void RopaEquipada()
         {
@@ -98,7 +105,8 @@ namespace Test.Library;
             Assert.IsTrue(golf.RopaEquipada.Contains(armadura));
 
         }
-        // En este test creamos una armadura y se la equipamos a un enano con nombre válido. Esperamos que la armadura equipada por el enano contenga a armadura.
+
+        // En este test creamos una armadura y se la equipamos a un enano con nombre válido. Esperamos que la armadura equipada por el enano no contenga a armadura.
         [Test]
         public void QuitarRopa()
         {
@@ -114,7 +122,7 @@ namespace Test.Library;
             Assert.IsFalse(golf.RopaEquipada.Contains(armadura));
 
         }
-        // En este test creamos una armadura y se la equipamos a un enano con nombre válido. Esperamos que la armadura equipada por el enano no contenga a armadura.
+        // En este test creamos un arma, una armadura y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al enano con la armadura y esperamos que la vida del enano atacado sea 80.
         [Test]
         public void AtacarConProteccion()
         {
@@ -133,7 +141,7 @@ namespace Test.Library;
             Assert.AreEqual(40, rud.Vida);
 
         }
-        // En este test creamos un arma, una armadura y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al enano con la armadura y esperamos que la vida del enano atacado sea 80.
+        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al otro enano y esperamos que la vida del enano atacado sea 70, ya que tiene mucha resistencia, como los otros no tienen estos tienen 20 de defensa por defecto.
         [Test]
         public void AtacarSinProteccion()
         {
@@ -149,7 +157,8 @@ namespace Test.Library;
             Assert.AreEqual(70, rud.Vida);
 
         }
-        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con el arma ataque al otro enano y esperamos que la vida del enano atacado sea 70, ya que tiene mucha resistencia, como los otros no tienen estos tienen 20 de defensa por defecto.
+
+        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 100 ya que su defensa nata le permite no perder vida por ese ataque.
         [Test]
         public void AtacarSinArmaSinProteccion()
         {
@@ -162,7 +171,8 @@ namespace Test.Library;
             Assert.AreEqual(100, rud.Vida);
 
         }
-        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 100 ya que su defensa nata le permite no perder vida por ese ataque.
+
+        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 100.
         [Test]
         public void AtacarSinArmaConProteccion()
         {
@@ -178,7 +188,8 @@ namespace Test.Library;
             Assert.AreEqual(100, rud.Vida);
 
         }
-        // En este test creamos dos enanos, ambos válidos. Luego hacemos que un enano ataque al otro enano y esperamos que la vida del enano atacado sea 100.
+        
+        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con arma ataque al otro enano y esperamos que la vida del enano atacado sea 0.
         [Test]
         public void AtaqueDeMuerte()
         {
@@ -194,5 +205,4 @@ namespace Test.Library;
             Assert.AreEqual(0, rud.Vida);
 
         }
-        // En este test creamos un arma y dos enanos, todos válidos. Luego hacemos que el enano con arma ataque al otro enano y esperamos que la vida del enano atacado sea 0.
     }

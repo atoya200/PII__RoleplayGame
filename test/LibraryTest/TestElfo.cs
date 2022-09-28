@@ -6,6 +6,7 @@ namespace Test.Library;
     [TestFixture]
     public class TestElfo
     {
+        // En este test creamos un elfo con nombre correcto, esperando que el nombre sea igual a nameEsperado.
         [Test]
 
         public void CrearElfoNameCorrecto()
@@ -14,7 +15,8 @@ namespace Test.Library;
             Elfo tom = new Elfo("Tom");
             Assert.AreEqual(nameEsperado,tom.Name);
         }
-        // En este test creamos un elfo con nombre correcto, esperando que el nombre sea igual a nameEsperado.
+
+        // En este test creamos un elfo con nombre inválido, esperando que el nombre sea nulo.
         [Test]
         public void CrearElfoNameVacio()
         {
@@ -22,6 +24,7 @@ namespace Test.Library;
             Elfo tom = new Elfo("");
             Assert.AreEqual(nameEsperado, tom.Name);
         }
+        
         // En este test creamos un elfo con nombre inválido, esperando que el nombre sea nulo.
          [Test]
         public void CrearElfoNameEspaciosEnBlanco()
@@ -30,6 +33,7 @@ namespace Test.Library;
             Elfo tom = new Elfo("     ");
             Assert.AreEqual(nameEsperado, tom.Name);
         }
+        
         // En este test creamos un elfo con nombre inválido, esperando que el nombre sea nulo.
          [Test]
         public void CrearElfoNameNulo()
@@ -38,6 +42,7 @@ namespace Test.Library;
             Elfo tom = new Elfo(null);
             Assert.AreEqual(nameEsperado, tom.Name);
         }
+        
         // En este test creamos un elfo con nombre inválido, esperando que el nombre sea nulo.
         [Test]
         public void CrearElfoNombrSoloSignos()
@@ -47,7 +52,8 @@ namespace Test.Library;
             Assert.AreEqual(nameEsperado, tom.Name);
 
         }
-        // En este test creamos un elfo con nombre inválido, esperando que el nombre sea nulo.
+        
+        // En este test creamos un arma y se la equipamos a un elfo con nombre válido. Esperamos que el arma equipada por el elfo sea igual a daga.
         [Test]
         public void ArmaEquipada()
         {
@@ -60,7 +66,8 @@ namespace Test.Library;
             // Comprobación.
             Assert.AreEqual(daga, tom.ArmaEquipada);
         }
-        // En este test creamos un arma y se la equipamos a un elfo con nombre válido. Esperamos que el arma equipada por el elfo sea igual a daga.
+
+        // En este test creamos un arma y se la equipamos a un elfo con nombre válido, luego la desequipamos. Esperamos que el arma equipada por el elfo no sea igual a daga.
         [Test]
         public void DesequiparArma()
         {
@@ -74,7 +81,8 @@ namespace Test.Library;
             // Comprobación.
             Assert.IsFalse(tom.ArmaEquipada == daga);
         }
-        // En este test creamos un arma y se la equipamos a un elfo con nombre válido, luego la desequipamos. Esperamos que el arma equipada por el elfo no sea igual a daga.
+        
+        // En este test creamos una armadura y se la equipamos a un elfo con nombre válido. Esperamos que la armadura equipada por el elfo contenga a armadura.
         [Test]
         public void RopaEquipada()
         {
@@ -87,8 +95,9 @@ namespace Test.Library;
             tom.EquiparRopa(armadura);
             // Comprobación.
             Assert.IsTrue(tom.RopaEquipada.Contains(armadura));
-        // En este test creamos una armadura y se la equipamos a un elfo con nombre válido. Esperamos que la armadura equipada por el elfo contenga a armadura.
         }
+        
+        // En este test creamos una armadura y se la equipamos a un elfo con nombre válido, luego la desequipamos. Esperamos que la armadura equipada por el elfo no contenga a armadura.
         [Test]
         public void QuitarRopa()
         {
@@ -102,9 +111,9 @@ namespace Test.Library;
             tom.QuitarRopa(armadura);
             // Comprobación.
             Assert.IsFalse(tom.RopaEquipada.Contains(armadura));
-            // En este test creamos una armadura y se la equipamos a un elfo con nombre válido, luego la desequipamos. Esperamos que la armadura equipada por el elfo no contenga a armadura.
         }
 
+        // En este test creamos un arma, una armadura y dos elfos, todos válidos. Luego hacemos que el elfo con el arma ataque al elfo con la armadura y esperamos que la vida del elfo atacado sea 50.
         [Test]
         public void AtacarConProteccion()
         {
@@ -123,7 +132,8 @@ namespace Test.Library;
             Assert.AreEqual(50, john.Vida);
 
         }
-        // En este test creamos un arma, una armadura y dos elfos, todos válidos. Luego hacemos que el elfo con el arma ataque al elfo con la armadura y esperamos que la vida del elfo atacado sea 50.
+        
+        // En este test creamos un arma y dos elfos, todos válidos. Luego hacemos que el elfo con el arma ataque al otro elfo y esperamos que la vida del elfo atacado sea 20.
         [Test]
         public void AtacarSinProteccion()
         {
@@ -139,7 +149,8 @@ namespace Test.Library;
             Assert.AreEqual(20, john.Vida);
 
         }
-        // En este test creamos un arma y dos elfos, todos válidos. Luego hacemos que el elfo con el arma ataque al otro elfo y esperamos que la vida del elfo atacado sea 20.
+        
+        // En este test creamos dos elfos, ambos válidos. Luego hacemos que un elfo ataque al otro elfo y esperamos que la vida del elfo atacado sea 90.
         [Test]
         public void AtacarSinArmaSinProteccion()
         {
@@ -152,7 +163,8 @@ namespace Test.Library;
             Assert.AreEqual(90, john.Vida);
 
         }
-        // En este test creamos dos elfos, ambos válidos. Luego hacemos que un elfo ataque al otro elfo y esperamos que la vida del elfo atacado sea 90.
+        
+        // En este test creamos dos elfos, ambos válidos. Luego hacemos que un elfo ataque al otro elfo y esperamos que la vida del elfo atacado sea 100.
         [Test]
         public void AtacarSinArmaConProteccion()
         {
@@ -168,7 +180,8 @@ namespace Test.Library;
             Assert.AreEqual(100, john.Vida);
 
         }
-        // En este test creamos dos elfos, ambos válidos. Luego hacemos que un elfo ataque al otro elfo y esperamos que la vida del elfo atacado sea 100.
+
+        // En este test creamos un arma y dos elfos, todos válidos. Luego hacemos que el elfo con arma ataque al otro elfo y esperamos que la vida del elfo atacado sea 0.
         [Test]
         public void AtaqueDeMuerte()
         {
@@ -181,9 +194,7 @@ namespace Test.Library;
             // Comportamiento.
             tom.Atacar(john);
             // Comprobación.
-            //Assert.AreEqual(-10, john.Vida);
             Assert.AreEqual(0, john.Vida);
 
         }
-        // En este test creamos un arma y dos elfos, todos válidos. Luego hacemos que el elfo con arma ataque al otro elfo y esperamos que la vida del elfo atacado sea 0.
     }

@@ -50,6 +50,7 @@ public class Mago : IPersonaje
         RopaEquipada = new List<Ropa>();
         ElementosMagicosEquipados = new List<ElementoMagico>();
         Inventario = new InventarioMago();
+        this.Defensa = 0;
     }
     public bool TextoValido(string name)
     {

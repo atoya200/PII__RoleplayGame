@@ -7,15 +7,16 @@ namespace Test.Library
     [TestFixture]
     public class TestMago
     {
+        // En este test creamos un mago con nombre correcto, esperando que el nombre cargado en la propiedad Nombre sea igual a nameEsperado.
         [Test]
-
         public void CrearMagoNameCorrecto()
         {
             string nombreEsperado = "Jason";
             Mago jason = new Mago("Jason");
             Assert.AreEqual(nombreEsperado, jason.Name);
         }
-        // En este test creamos un mago con nombre correcto, esperando que el nombre sea igual a nameEsperado.
+
+        // En este test creamos un mago con nombre inválido, esperando que el nombre que cargue en la propiedad sea nulo.
         [Test]
         public void CrearMagoNameVacio()
         {
@@ -23,7 +24,8 @@ namespace Test.Library
             Mago jason = new Mago("");
             Assert.AreEqual(nombreEsperado, jason.Name);
         }
-        // En este test creamos un mago con nombre inválido, esperando que el nombre sea nulo.
+
+        // En este test creamos un mago con nombre inválido, esperando que el nombre que cargue en la propiedad sea nulo.
         [Test]
         public void CrearMagoNameEspaciosEnBlanco()
         {
@@ -31,7 +33,8 @@ namespace Test.Library
             Mago jason = new Mago("     ");
             Assert.AreEqual(nombreEsperado, jason.Name);
         }
-        // En este test creamos un mago con nombre inválido, esperando que el nombre sea nulo.
+
+        // En este test creamos un mago con nombre inválido, esperando que el nombre que cargue en la propiedad sea nulo.
         [Test]
         public void CrearMagoNameNulo()
         {
@@ -39,7 +42,8 @@ namespace Test.Library
             Mago jason = new Mago(null);
             Assert.AreEqual(nombreEsperado, jason.Name);
         }
-        // En este test creamos un mago con nombre inválido, esperando que el nombre sea nulo.
+
+        // En este test creamos un mago con nombre inválido, esperando que el nombre que cargue en la propiedad sea nulo.
         [Test]
         public void CrearMagoNombrSoloSignos()
         {
@@ -48,7 +52,10 @@ namespace Test.Library
             Assert.AreEqual(nombreEsperado, jason.Name);
 
         }
-        // En este test creamos un mago con nombre inválido, esperando que el nombre sea nulo.
+        /* 
+         En este test creamos una armadura y se la equipamos a un mago con nombre válido. 
+         Esperamos que la armadura equipada por el mago contenga la armadura que creamos.
+        */
         [Test]
         public void RopaEquipada()
         {
@@ -62,7 +69,10 @@ namespace Test.Library
             // Comprobación.
             Assert.IsTrue(jason.RopaEquipada.Contains(armadura));
         }
-        // En este test creamos una armadura y se la equipamos a un mago con nombre válido. Esperamos que la armadura equipada por el mago contenga a armadura.
+        /* 
+         En este test creamos una armadura y se la equipamos a un mago con nombre válido, luego la desequipamos.
+         Esperamos que la armadura equipada por el mago no contenga la armadura que creamos.
+        */
         [Test]
         public void DesequiparRopa()
         {
@@ -78,7 +88,10 @@ namespace Test.Library
             Assert.IsFalse(jason.RopaEquipada.Contains(armadura));
 
         }
-        // En este test creamos una armadura y se la equipamos a un mago con nombre válido, luego la desequipamos. Esperamos que la armadura equipada por el mago no contenga a armadura.
+        /*
+         En este test creamos un arma y se la equipamos a un mago con nombre válido.
+         Esperamos que el arma equipada por el mago sea igual a baston.
+        */
         [Test]
         public void EquiparArma()
         {
@@ -92,7 +105,10 @@ namespace Test.Library
             Assert.AreEqual(baston, jason.ArmaEquipada);
 
         }
-        // En este test creamos un arma y se la equipamos a un mago con nombre válido. Esperamos que el arma equipada por el mago sea igual a baston.
+        /*
+         En este test creamos un arma y se la equipamos a un mago con nombre válido, luego lo desequipamos.
+         Esperamos que el arma equipada por el mago no sea igual a baston.
+        */
         [Test]
         public void DesequiparArma()
         {
@@ -106,7 +122,11 @@ namespace Test.Library
             // Comprobación.
             Assert.IsFalse(baston == jason.ArmaEquipada);
         }
-        // En este test creamos un arma y se la equipamos a un mago con nombre válido, luego lo desequipamos. Esperamos que el arma equipada por el mago no sea igual a baston.
+
+        /* 
+         En este test creamos un libro y se lo equipamos a un mago con nombre válido.
+         Esperamos que el libro equipado sea igual a grimorio.
+        */
         [Test]
         public void EquiparLibro()
         {
@@ -120,7 +140,8 @@ namespace Test.Library
             Assert.AreEqual(grimorio, jason.LibroDeHechizosEquipado);
 
         }
-        // En este test creamos un libro y se lo equipamos a un mago con nombre válido. Esperamos que el libro equipado sea igual a grimorio.
+        // En este test creamos un libro y se lo equipamos a un mago con nombre válido, luego lo desequipamos.
+        // Esperamos que el libro equipado no sea igual a grimorio.
         [Test]
         public void DesequiparLibro()
         {
@@ -134,7 +155,8 @@ namespace Test.Library
             // Comprobación.
             Assert.IsFalse(grimorio == jason.LibroDeHechizosEquipado);
         }
-        // En este test creamos un libro y se lo equipamos a un mago con nombre válido, luego lo desequipamos. Esperamos que el libro equipado no sea igual a grimorio.
+        // En este test creamos un elemento mágico y se lo equipamos a un mago con nombre válido.
+        // Esperamos que elementos mágicos equipados contenga a runa.
         [Test]
         public void EquiparelEmentosMagicos()
         {
@@ -148,7 +170,8 @@ namespace Test.Library
             Assert.IsTrue(jason.ElementosMagicosEquipados.Contains(runa));
 
         }
-        // En este test creamos un elemento mágico y se lo equipamos a un mago con nombre válido. Esperamos que elementos mágicos equipados contenga a runa.
+        // En este test creamos un elemento mágico y se lo equipamos a un mago con nombre válido.
+        // Esperamos que elementos mágicos equipados no contenga a runa.
         [Test]
         public void DesequiparElementosMagicos()
         {
@@ -163,8 +186,9 @@ namespace Test.Library
             Assert.IsFalse(jason.ElementosMagicosEquipados.Contains(runa));
 
         }
-        // En este test creamos un elemento mágico y se lo equipamos a un mago con nombre válido. Esperamos que elementos mágicos equipados no contenga a runa.
 
+        // En este test creamos un arma, una armadura y dos magos, todos válidos.
+        // Luego hacemos que el mago con el arma ataque al mago con la armadura y esperamos que la vida del mago atacado sea 80.
         [Test]
         public void AtacarConProteccion()
         {
@@ -183,8 +207,9 @@ namespace Test.Library
             Assert.AreEqual(80, john.Vida);
 
         }
-        // En este test creamos un arma, una armadura y dos magos, todos válidos. Luego hacemos que el mago con el arma ataque al mago con la armadura y esperamos que la vida del mago atacado sea 80.
 
+        // En este test creamos un arma y dos magos, todos válidos.
+        // Luego hacemos que el mago con el arma ataque al otro mago y esperamos que la vida del mago atacado sea 50.
         [Test]
         public void AtacarSinProteccion()
         {
@@ -198,9 +223,10 @@ namespace Test.Library
             tom.Atacar(john);
             // Comprobación.
             Assert.AreEqual(50, john.Vida);
-
         }
-        // En este test creamos un arma y dos magos, todos válidos. Luego hacemos que el mago con el arma ataque al otro mago y esperamos que la vida del mago atacado sea 50.
+
+        // En este test creamos dos magos, todos válidos.
+        // Luego hacemos que un mago ataque al otro mago y esperamos que la vida del mago atacado sea 90.
         [Test]
         public void AtacarSinArmaSinProteccion()
         {
@@ -213,7 +239,9 @@ namespace Test.Library
             Assert.AreEqual(90, john.Vida);
 
         }
-        // En este test creamos dos magos, todos válidos. Luego hacemos que un mago ataque al otro mago y esperamos que la vida del mago atacado sea 90.
+
+        // En este test creamos una armadura y dos magos, todos válidos.
+        // Luego hacemos que un mago ataque al mago con armadura y esperamos que la vida del mago atacado sea 100.
         [Test]
         public void AtacarSinArmaConProteccion()
         {
@@ -229,7 +257,8 @@ namespace Test.Library
             Assert.AreEqual(100, john.Vida);
 
         }
-        // En este test creamos una armadura y dos magos, todos válidos. Luego hacemos que un mago ataque al mago con armadura y esperamos que la vida del mago atacado sea 100.
+        // En este test creamos un hechizo de ataque, un libro, una armadura y dos magos, todos válidos.
+        // Luego hacemos que el mago con el hechizo y el libro ataque al mago con armadura y esperamos que la vida del mago atacado sea 50.
         [Test]
         public void AtacarConHechizoConProteccion()
         {
@@ -250,9 +279,10 @@ namespace Test.Library
             Assert.AreEqual(50, john.Vida);
 
         }
-        // En este test creamos un hechizo de ataque, un libro, una armadura y dos magos, todos válidos. Luego hacemos que el mago con el hechizo y el libro ataque al mago con armadura y esperamos que la vida del mago atacado sea 50.
         
 
+        // En este test creamos un hechizo de ataque, un libro y dos magos, todos válidos.
+        // Luego hacemos que el mago con el hechizo y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 20.
         [Test]
         public void AtacarConHechizoSinProteccion()
         {
@@ -270,8 +300,9 @@ namespace Test.Library
             Assert.AreEqual(20, john.Vida);
 
         }
-        // En este test creamos un hechizo de ataque, un libro y dos magos, todos válidos. Luego hacemos que el mago con el hechizo y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 20.
-
+        // En este test creamos un elemento mágico, una armadura y dos magos, todos válidos.
+        // Luego hacemos que el mago con el elemento mágico ataque al mago con armadura y esperamos que la vida del mago atacado sea 73.
+        [Test]
         public void AtacarConElemtentosMagicosConProteccion()
         {
             // Configuración.
@@ -286,11 +317,11 @@ namespace Test.Library
             // Comportamiento.
             tom.AtacarConElementoMagico(john, runa);
             // Comprobación.
-            Assert.AreEqual(73, john.Vida);
-
+            Assert.AreEqual(83, john.Vida);
         }
-        // En este test creamos un elemento mágico, una armadura y dos magos, todos válidos. Luego hacemos que el mago con el elemento mágico ataque al mago con armadura y esperamos que la vida del mago atacado sea 73.
 
+        // En este test creamos un elemento mágico y dos magos, todos válidos.
+        // Luego hacemos que el mago con el elemento mágico ataque al otro mago y esperamos que la vida del mago atacado sea 53.
         [Test]
         public void AtacarConElemtentoMagicoSinProteccion()
         {
@@ -304,11 +335,10 @@ namespace Test.Library
             tom.AtacarConElementoMagico(john, runa);
             // Comprobación.
             Assert.AreEqual(53, john.Vida);
-
         }
-        // En este test creamos un elemento mágico y dos magos, todos válidos. Luego hacemos que el mago con el elemento mágico ataque al otro mago y esperamos que la vida del mago atacado sea 53.
 
-
+        // En este test creamos un elemento mágico y dos magos, todos válidos.
+        //Luego hacemos que el mago con el elemento mágico ataque al otro mago y esperamos que la vida del mago atacado sea 0.
         [Test]
         public void AtaqueDeMuerteConElemtentoMagicoSinProteccion()
         {
@@ -324,8 +354,9 @@ namespace Test.Library
             Assert.AreEqual(0, john.Vida);
 
         }
-        // En este test creamos un elemento mágico y dos magos, todos válidos. Luego hacemos que el mago con el elemento mágico ataque al otro mago y esperamos que la vida del mago atacado sea 0.
 
+        // En este test creamos un hechizo de ataque, un libro y dos magos, todos válidos.
+        // Luego hacemos que el mago con el hechizo de ataque y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
         [Test]
         public void AtaqueDeMuerteConHechizo()
         {
@@ -341,9 +372,10 @@ namespace Test.Library
             tom.AtacarConHechizo(john, bolaFuego);
             // Comprobación.
             Assert.AreEqual(0, john.Vida);
-
         }
-        // En este test creamos un hechizo de ataque, un libro y dos magos, todos válidos. Luego hacemos que el mago con el hechizo de ataque y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
+
+        // En este test creamos un arma y dos magos, todos válidos.
+        // Luego hacemos que el mago con el arma y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
         [Test]
         public void AtaqueDeMuerte()
         {
@@ -358,9 +390,9 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(0, john.Vida);
         }
-        // En este test creamos un arma y dos magos, todos válidos. Luego hacemos que el mago con el arma y el libro ataque al otro mago y esperamos que la vida del mago atacado sea 0.
 
-           [Test]
+        // Con este test probamos que efectivamente se aumetna la defensa de un personaje con un hechizo de defensa.
+        [Test]
         public void AumentarDefensaPeronsaje()
         {
             // Configuración.
@@ -376,8 +408,11 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(20, john.Defensa);
         }
-        // Con este test probamos que efectivamente se aumetna la defensa de un personaje con un hechizo de defensa.
 
+        /*
+         Con este test primero atacamos al personaje y luego usamos la capacidad del mago de curar
+         para restablecer a 100 su vida, que es la que elegimos en esta oportunidad como vida máxima. 
+        */
         [Test]
         public void CurarPeronsaje()
         {
@@ -395,10 +430,6 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(100, john.Vida);
         }
-        /*
-         Con este test primero atacamos al personaje y luego usamos la capacidad del mago de curar
-         para restablecer a 100 su vida, que es la que elegimos en esta oportunidad como vida máxima. 
-        */
 
     }
 }

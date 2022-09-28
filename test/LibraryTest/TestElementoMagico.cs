@@ -8,6 +8,7 @@ namespace Test.Library
     public class TestElementoMagico
     {
         // Conjunto de test sobre el name del elemento mágico.
+        // En este test creamos un elemento mágico con nombre correcto, esperando que el nombre sea igual a nameEsperado.
         [Test]
         public void ElementoMagicoNameCorrecto()
         {
@@ -18,7 +19,8 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
-        // En este test creamos un elemento mágico con nombre correcto, esperando que el nombre sea igual a nameEsperado.
+
+        // En este test creamos un elemento mágico con nombre nulo, esperando que el nombre sea igual a nulo.
         [Test]
         public void ElementoMagicoNameVacio()
         {
@@ -29,6 +31,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
+        
         // En este test creamos un elemento mágico con nombre nulo, esperando que el nombre sea igual a nulo.
         [Test]
         public void ElementoMagicoNameEspaciosEnBlanco()
@@ -40,6 +43,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
+        
         // En este test creamos un elemento mágico con nombre nulo, esperando que el nombre sea igual a nulo.
         [Test]
         public void ElementoMagicoNameSoloConSignos()
@@ -51,6 +55,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
+        
         // En este test creamos un elemento mágico con nombre nulo, esperando que el nombre sea igual a nulo.
         [Test]
         public void ElementoMagicoNameNulo()
@@ -62,9 +67,9 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(nameEsperado, espada.Name);
         }
-        // En este test creamos un elemento mágico con nombre nulo, esperando que el nombre sea igual a nulo.
 
- [Test]
+        // En este test creamos un elemento mágico con descripción válida, esperando que el nombre sea igual a descripcionEsperada.
+        [Test]
         public void ElementoMagicoDescripcionCorrecta()
         {
             // Configuración.
@@ -74,7 +79,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
-        // En este test creamos un elemento mágico con descripción válida, esperando que el nombre sea igual a descripcionEsperada.
+        // En este test creamos un elemento mágico con descripción nula, esperando que el nombre sea nulo.
         [Test]
         public void ElementoMagicoDescripcionVacia()
         {
@@ -85,6 +90,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
+
         // En este test creamos un elemento mágico con descripción nula, esperando que el nombre sea nulo.
         [Test]
         public void ElementoMagicoDescripcionEspaciosEnBlanco()
@@ -96,6 +102,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
+        
         // En este test creamos un elemento mágico con descripción nula, esperando que el nombre sea nulo.
         [Test]
         public void ElementoMagicoDescripcionSoloConSignos()
@@ -107,6 +114,7 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
+        
         // En este test creamos un elemento mágico con descripción nula, esperando que el nombre sea nulo.
         [Test]
         public void ElementoMagicoDescripcionNula()
@@ -118,8 +126,9 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(descripcionEsperada, espada.Descripcion);
         }
-        // En este test creamos un elemento mágico con descripción nula, esperando que el nombre sea nulo.
         // Prueba con ataque.
+        
+        // En este test creamos un elemento mágico con ataque válido, esperando que el nombre sea igual a daño esperado.
         [Test]
         public void AtaqueCorrecto()
         {
@@ -130,7 +139,8 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
-        // En este test creamos un elemento mágico con ataque válido, esperando que el nombre sea igual a daño esperado.
+        
+        // En este test creamos un elemento mágico con ataque inválido, esperando que el nombre sea nulo.
         [Test]
         public void AtaqueMenorACero()
         {
@@ -141,8 +151,9 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(dañoEsperado, espada.Ataque);
         }
-        // En este test creamos un elemento mágico con ataque inválido, esperando que el nombre sea nulo.
         // Prueba con defensa.
+        
+        // En este test creamos un elemento mágico con defensa válido, esperando que el nombre sea igual a daño esperado.
         [Test]
         public void DefensaCorrecta()
         {
@@ -153,7 +164,8 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
-        // En este test creamos un elemento mágico con defensa válido, esperando que el nombre sea igual a daño esperado.
+        
+        // En este test creamos un elemento mágico con defensa nula, esperando que el nombre sea nula.
         [Test]
         public void DefensaMenorACero()
         {
@@ -164,7 +176,6 @@ namespace Test.Library
             // Comprobación.
             Assert.AreEqual(proteccionEsperada, espada.Defensa);
         }
-        // En este test creamos un elemento mágico con defensa nula, esperando que el nombre sea nula.
 
        
 
